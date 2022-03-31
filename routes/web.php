@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\admin\ProfileController as AdminProfileController;
+use App\Http\Controllers\admin\ProductController as AdminProductController;
 use App\Http\Controllers\admin\CategoryController as AdminCategoryController;
 
 /*
@@ -24,6 +25,12 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::view('profile', 'admin.user.profile')->name('profile');
     Route::put('profile', [AdminProfileController::class, 'update'])->name('profile.update');
+
+    Route::resource('products', AdminProductController::class, ['names' => [
+        'index' => 'admin.products.index',
+        'create' => 'admin.products.create',
+        'edit' => 'admin.products.edit'
+    ]]);
 
     Route::resource('categories', AdminCategoryController::class, ['names' => [
         'index' => 'admin.categories.index',

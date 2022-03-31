@@ -4,7 +4,6 @@ namespace App\Http\Controllers\admin;
 
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\Genre;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
@@ -25,8 +24,7 @@ class ProductController extends Controller
 
         return view('admin.products.index', [
             'products' => $products->with([
-                'category',
-                'genre'
+                'category'
             ])->orderBy('id', 'DESC')->paginate(10),
         ]);
     }
@@ -39,11 +37,9 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        $genres = Genre::all();
 
         return view('admin.products.create', [
-            'categories' => $categories,
-            'genres' => $genres
+            'categories' => $categories
         ]);
     }
 
@@ -59,8 +55,25 @@ class ProductController extends Controller
             'img' => $request->img->getClientOriginalName(),
             'name' => $request->name,
             'category_id' => $request->category_id,
-            'reference' => $request->reference,
+            'volume' => $request->volume,
+            'author' => $request->author,
+            'date' => $request->date,
+            'fv_editor' => $request->fv_editor,
+            'ov_editor' => $request->ov_editor,
+            'paperback_price' => $request->paperback_price,
+            'digital_price' => $request->digital_price,
+            'quantity' => $request->quantity,
+            'synopsis' => $request->synopsis,
+            'language' => $request->language,
+            'isbn10' => $request->isbn10,
+            'isbn30' => $request->isbn30,
+            'pages' => $request->pages,
+            'weight' => $request->weight,
             'size' => $request->size,
+            'title' => $request->title,
+            'origin' => $request->origin,
+            'fv_volumes_number' => $request->fv_volumes_number,
+            'ov_volumes_number' => $request->ov_volumes_number
         ]);
 
         $request->img->storeAs('products', $request->img->getClientOriginalName(), 'public');
@@ -87,7 +100,12 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::all();
+
+        return view('admin.products.edit', [
+            'product' => $product,
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -99,7 +117,60 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        if ($request->img == null) {
+            $product->update([
+                'name' => $request->name,
+                'category_id' => $request->category_id,
+                'volume' => $request->volume,
+                'author' => $request->author,
+                'date' => $request->date,
+                'fv_editor' => $request->fv_editor,
+                'ov_editor' => $request->ov_editor,
+                'paperback_price' => $request->paperback_price,
+                'digital_price' => $request->digital_price,
+                'quantity' => $request->quantity,
+                'synopsis' => $request->synopsis,
+                'language' => $request->language,
+                'isbn10' => $request->isbn10,
+                'isbn30' => $request->isbn30,
+                'pages' => $request->pages,
+                'weight' => $request->weight,
+                'size' => $request->size,
+                'title' => $request->title,
+                'origin' => $request->origin,
+                'fv_volumes_number' => $request->fv_volumes_number,
+                'ov_volumes_number' => $request->ov_volumes_number
+            ]);
+        } else {
+            $product->update([
+                'img' => $request->img->getClientOriginalName(),
+                'name' => $request->name,
+                'category_id' => $request->category_id,
+                'volume' => $request->volume,
+                'author' => $request->author,
+                'date' => $request->date,
+                'fv_editor' => $request->fv_editor,
+                'ov_editor' => $request->ov_editor,
+                'paperback_price' => $request->paperback_price,
+                'digital_price' => $request->digital_price,
+                'quantity' => $request->quantity,
+                'synopsis' => $request->synopsis,
+                'language' => $request->language,
+                'isbn10' => $request->isbn10,
+                'isbn30' => $request->isbn30,
+                'pages' => $request->pages,
+                'weight' => $request->weight,
+                'size' => $request->size,
+                'title' => $request->title,
+                'origin' => $request->origin,
+                'fv_volumes_number' => $request->fv_volumes_number,
+                'ov_volumes_number' => $request->ov_volumes_number
+            ]);
+
+            $request->img->storeAs('products', $request->img->getClientOriginalName(), 'public');
+        }
+
+        return redirect()->route('admin.products.edit', $product->id)->with('message', 'Produit modifié avec succès');
     }
 
     /**
@@ -110,6 +181,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('admin.products.index')->with('message', 'Produit supprimé avec succès');
     }
 }

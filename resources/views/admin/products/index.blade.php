@@ -148,7 +148,7 @@
                     </tbody>
                 </table>
             </div>
-            {{ $products->appends(['search' => request('search')])->links('vendor.pagination.tailwind') }}
+            {{ $products->appends(['search' => request('search')])->links() }}
         </div>
         @endif
 

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\admin\ProfileController as AdminProfileController;
+use App\Http\Controllers\admin\CategoryController as AdminCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,12 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::view('profile', 'admin.user.profile')->name('profile');
     Route::put('profile', [AdminProfileController::class, 'update'])->name('profile.update');
+
+    Route::resource('categories', AdminCategoryController::class, ['names' => [
+        'index' => 'admin.categories.index',
+        'create' => 'admin.categories.create',
+        'edit' => 'admin.categories.edit'
+    ]]);
 });
 
 require __DIR__ . '/auth.php';

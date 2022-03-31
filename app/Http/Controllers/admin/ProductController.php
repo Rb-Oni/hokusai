@@ -24,7 +24,8 @@ class ProductController extends Controller
 
         return view('admin.products.index', [
             'products' => $products->with([
-                'category'
+                'category',
+                'genres'
             ])->orderBy('id', 'DESC')->paginate(10),
         ]);
     }

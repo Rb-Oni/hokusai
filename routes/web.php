@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\admin\ProductController as AdminProductController;
 use App\Http\Controllers\admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\admin\GenreController as AdminGenreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,11 @@ Route::group(['middleware' => 'auth'], function () {
         'index' => 'admin.categories.index',
         'create' => 'admin.categories.create',
         'edit' => 'admin.categories.edit'
+    ]]);
+    Route::resource('genres', AdminGenreController::class, ['names' => [
+        'index' => 'admin.genres.index',
+        'create' => 'admin.genres.create',
+        'edit' => 'admin.genres.edit'
     ]]);
 });
 

@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
                         {{ __('Catégories') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.genres.index')" :active="request()->routeIs('admin.genres.index')">
+                        {{ __('Genres') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -80,6 +83,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
                 {{ __('Catégories') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.genres.index')" :active="request()->routeIs('admin.genres.index')">
+                {{ __('Genres') }}
             </x-responsive-nav-link>
         </div>
 

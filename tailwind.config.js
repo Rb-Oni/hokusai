@@ -17,6 +17,9 @@ module.exports = {
           xl: '1280px'
         }
       },
+      animation: {
+        'news': 'anim .3s ease-in-out',
+      },
       fontFamily: {
         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
       },
@@ -29,6 +32,8 @@ module.exports = {
         '32rem': '32rem',
       },
       height: {
+        '90': '22rem',
+        '31rem': '31rem',
         '70vh': '70vh',
         '45vh': '45vh',
       },
@@ -38,6 +43,11 @@ module.exports = {
         'berserk': "url('/img/berserk.jpg')",
         'op': "url('/img/op.jpg')",
         'tg': "url('/img/tg.jpg')",
+        'sl': "url('/img/sl.jpg')",
+        'jujutsu': "url('/img/jujutsu.jpg')",
+        'kny': "url('/img/kny.jpg')",
+        'haikyu': "url('/img/haikyu.jpg')",
+        'vs': "url('/img/vs.jpg')",
       }
     },
   },

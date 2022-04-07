@@ -11,7 +11,7 @@
     <title>@yield('title')</title>
 </head>
 
-<body class="bg-white">
+<body class="bg-slate-100">
 
     @include('layouts.navbar')
 

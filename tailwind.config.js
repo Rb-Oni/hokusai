@@ -22,6 +22,7 @@ module.exports = {
       },
       height: {
         '70vh': '70vh',
+        '45vh': '45vh',
       },
       backgroundImage: {
         'mha': "url('/img/mha.jpg')",

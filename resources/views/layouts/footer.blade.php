@@ -5,10 +5,10 @@
 </a>
 <footer class="bg-black">
     <div class="container mx-auto text-white py-3">
-        <div class="flex flex-row justify-between py-3">
-            <div class="">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between py-3">
+            <div class="mb-2 lg:mb-6">
                 <p class="font-bold mb-4">SERVICE CLIENT</p>
-                <div class="flex flex-row justify-between">
+                <div class="flex">
                     <ul class="">
                         <li class="py-1"><a href="#" class="">Frais de port</a></li>
                         <li class="py-1"><a href="#" class="">Durée de livraison</a></li>
@@ -21,9 +21,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="">
+            <div class="mb-2 lg:mb-6">
                 <p class="font-bold mb-4">HOKUSAI</p>
-                <div class="flex flex-row justify-between">
+                <div class="flex">
                     <ul class="">
                         <li class="py-1"><a href="#" class="">Cartes cadeaux</a></li>
                         <li class="py-1"><a href="#" class="">Programme partenaire</a></li>
@@ -36,24 +36,20 @@
                     </ul>
                 </div>
             </div>
-            <div class="">
+            <div class="mb-2 lg:mb-6">
                 <p class="font-bold">MOYENS DE PAIEMENT</p>
                 <img src="img/pay.png" alt="Moyen de paiement" class="w-52">
             </div>
-            <div class="">
+            <div class="mb-2 lg:mb-6">
                 <p class="font-bold mb-4">NOS PARTENAIRES LOGISTIQUES</p>
-                <div class="flex flex-row justify-between">
+                <div class="flex">
+                    <img src="img/dhl.png" alt="DHL" class="h-7">
                     <img src="img/ups.png" alt="UPS" class="h-7">
                     <img src="img/colissimo.png" alt="Colissimo" class="h-7">
-                    <img src="img/dhl.png" alt="DHL" class="h-7">
                 </div>
             </div>
-        </div>
 
-        <div id="separator"></div>
-
-        <div class="flex flex-row justify-center py-3">
-            <div class="">
+            <div class="mb-2 lg:mb-0">
                 <p class="font-bold mb-4">NOS AVANTAGES</p>
                 <ul class="">
                     <li class="py-1">
@@ -69,10 +65,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="">
+            <div class="mb-2 lg:mb-0">
                 <p class="font-bold mb-4">NOS RESEAUX SOCIAUX</p>
-                <div class="flex flex-row justify-center">
-                    <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-circled--v1.png" /></a>
+                <div class="flex">
+                    <a href="#" class="col-1"><img src="https://img.icons8.com/color/48/000000/facebook-circled--v1.png" /></a>
                     <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter-circled--v1.png" /></a>
                     <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
                 </div>

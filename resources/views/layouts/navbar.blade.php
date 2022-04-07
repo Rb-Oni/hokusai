@@ -5,7 +5,7 @@
     <div class="container-fluid relative bg-white bg-opacity-95 text-black">
         <div x-data="{ open: true }" class="flex flex-col pr-4 lg:items-end lg:justify-between lg:flex-row lg:pr-12">
             <div class="flex flex-row justify-between">
-                <div class="bg-black w-96">
+                <div class="flex justify-end bg-black w-32rem">
                     <a class="" href="{{ route('welcome') }}"><img src="img/logo_black.png" alt="Hokusai logo" class=""></a>
                 </div>
                 <button class="rounded-lg lg:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
@@ -15,13 +15,13 @@
                     </svg>
                 </button>
             </div>
-            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 lg:pb-0 lg:flex lg:justify-start lg:flex-row">
+            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 lg:pb-2 lg:flex lg:justify-start lg:flex-row">
                 <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('welcome') }}">MANGAS</a>
                 <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('welcome') }}">CONTACT</a>
                 <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('welcome') }}">CALENDRIER</a>
             </nav>
-            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 lg:pb-0 lg:flex lg:justify-end lg:flex-row">
-                <a class="hover:text-greenc" href="{{ route('welcome') }}">
+            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 lg:pb-2 lg:flex lg:justify-end lg:flex-row">
+                <a class="hover:text-greenc mr-4" href="{{ route('welcome') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                     </svg>

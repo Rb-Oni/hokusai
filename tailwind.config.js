@@ -27,6 +27,7 @@ module.exports = {
         'white': '#FFFFFF',
         'black': '#191919',
         'greenc': '#00BFA5',
+        'greenh': '#008C79',
       },
       width: {
         '32rem': '32rem',
@@ -48,6 +49,7 @@ module.exports = {
         'kny': "url('/img/kny.jpg')",
         'haikyu': "url('/img/haikyu.jpg')",
         'vs': "url('/img/vs.jpg')",
+        'genres': "url('/img/back.png')",
       }
     },
   },

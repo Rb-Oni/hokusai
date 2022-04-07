@@ -104,4 +104,30 @@ Hokusai
 
 </div>
 
+<div class="bg-genres bg-cover bg-center">
+    <div class="container mx-auto py-16">
+        <div class="mb-16">
+            <h2 class="text-5xl text-center font-bold">Genres</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-white font-bold text-center text-4xl">
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Action</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Aventure</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Drame</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Comédie</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Horreur</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Romance</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Tranches de vie</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Sunaturel</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Fantaisie</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Science-fiction</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Historique</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Mystère</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Thriller</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Psychologique</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Tragique de vie</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Sport</a>
+        </div>
+    </div>
+</div>
+
 @endsection

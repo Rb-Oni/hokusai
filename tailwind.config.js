@@ -9,6 +9,14 @@ module.exports = {
 
   theme: {
     extend: {
+      container: {
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px'
+        }
+      },
       fontFamily: {
         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
       },
@@ -26,6 +34,10 @@ module.exports = {
       },
       backgroundImage: {
         'mha': "url('/img/mha.jpg')",
+        'snk': "url('/img/snk.jpg')",
+        'berserk': "url('/img/berserk.jpg')",
+        'op': "url('/img/op.jpg')",
+        'tg': "url('/img/tg.jpg')",
       }
     },
   },

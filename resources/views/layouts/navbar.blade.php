@@ -1,4 +1,8 @@
-    <div class="container-fluid relative bg-white text-black">
+@if(Route::is('welcome'))
+<div class="bg-mha bg-cover bg-top">
+    @endif
+
+    <div class="container-fluid relative bg-white bg-opacity-95 text-black">
         <div x-data="{ open: true }" class="flex flex-col pr-4 lg:items-end lg:justify-between lg:flex-row lg:pr-12">
             <div class="flex flex-row justify-between">
                 <div class="bg-black w-96">

@@ -43,6 +43,10 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <x-dropdown-link :href="route('welcome')" class="text-greenc">
+                            Hokusai
+                        </x-dropdown-link>
+
                         <x-dropdown-link :href="route('profile')">
                             {{ __('My Profile') }}
                         </x-dropdown-link>
@@ -97,6 +101,10 @@
             </div>
 
             <div class="mt-3 space-y-1">
+                <x-responsive-nav-link :href="route('welcome')" class="text-greenc">
+                    Hokusai
+                </x-responsive-nav-link>
+
                 <x-responsive-nav-link :href="route('profile')">
                     {{ __('My Profile') }}
                 </x-responsive-nav-link>

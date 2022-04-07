@@ -17,6 +17,15 @@ module.exports = {
         'black': '#191919',
         'greenc': '#00BFA5',
       },
+      width: {
+        '32rem': '32rem',
+      },
+      height: {
+        '70vh': '70vh',
+      },
+      backgroundImage: {
+        'mha': "url('/img/mha.jpg')",
+      }
     },
   },
 

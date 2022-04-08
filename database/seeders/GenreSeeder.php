@@ -15,7 +15,6 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
-        
         $genres = [
             [
                 'name' => 'Action'
@@ -67,19 +66,18 @@ class GenreSeeder extends Seeder
             ]
         ];
 
-        foreach($genres as $genre) {
+        foreach ($genres as $genre) {
             try {
                 Genre::firstOrCreate([
                     'name' => $genre['name']
                 ]);
-            }catch (\Exception $exception) {
-                if($exception->getCode() == "23000") {
-                    dump('Genre "' .$genre['name'] .'" already exist');
-                }else {
+            } catch (\Exception $exception) {
+                if ($exception->getCode() == "23000") {
+                    dump('Genre "' . $genre['name'] . '" already exist');
+                } else {
                     dump($exception->getMessage());
                 }
             }
         }
-
     }
 }

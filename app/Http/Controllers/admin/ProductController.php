@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Models\Genre;
 use App\Models\Product;
 use App\Models\Category;
 use App\Http\Controllers\Controller;
@@ -38,9 +39,11 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
+        $genres = Genre::all();
 
         return view('admin.products.create', [
-            'categories' => $categories
+            'categories' => $categories,
+            'genres' => $genres
         ]);
     }
 
@@ -52,7 +55,7 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        Product::create([
+        $product = Product::create([
             'img' => $request->img->getClientOriginalName(),
             'name' => $request->name,
             'category_id' => $request->category_id,
@@ -76,6 +79,8 @@ class ProductController extends Controller
             'fv_volumes_number' => $request->fv_volumes_number,
             'ov_volumes_number' => $request->ov_volumes_number
         ]);
+
+        $product->genres()->attach($request->genre_id);
 
         $request->img->storeAs('products', $request->img->getClientOriginalName(), 'public');
 
@@ -102,10 +107,12 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::all();
+        $genres = Genre::all();
 
         return view('admin.products.edit', [
             'product' => $product,
-            'categories' => $categories
+            'categories' => $categories,
+            'genres' => $genres
         ]);
     }
 

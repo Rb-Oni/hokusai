@@ -24,7 +24,7 @@ class StoreProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'img' => 'nullable|image|mimes:jpg,png,jpeg,svg|max:10240',
+            'img' => 'required|image|mimes:jpg,png,jpeg,svg|max:10240',
             'name' => 'required',
             'category_id' => 'required',
             'volume' => 'nullable',

@@ -15,6 +15,33 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::factory(5);
+        $categories = [
+            [
+                'name' => 'Shonen'
+            ],
+            [
+                'name' => 'Seinen'
+            ],
+            [
+                'name' => 'Shojo'
+            ],
+            [
+                'name' => 'Josei'
+            ]
+        ];
+
+        foreach ($categories as $category) {
+            try {
+                Category::firstOrCreate([
+                    'name' => $category['name']
+                ]);
+            } catch (\Exception $exception) {
+                if ($exception->getCode() == "23000") {
+                    dump('Category "' . $category['name'] . '" already exist');
+                } else {
+                    dump($exception->getMessage());
+                }
+            }
+        }
     }
 }

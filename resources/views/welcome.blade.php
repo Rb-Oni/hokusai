@@ -117,14 +117,14 @@ Hokusai
             <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Horreur</a>
             <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Romance</a>
             <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Tranches de vie</a>
-            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Sunaturel</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Surnaturel</a>
             <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Fantaisie</a>
             <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Science-fiction</a>
             <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Historique</a>
             <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Mystère</a>
             <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Thriller</a>
             <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Psychologique</a>
-            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Tragique de vie</a>
+            <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Tragique</a>
             <a href="#" class="bg-greenc hover:bg-greenh duration-150 p-4">Sport</a>
         </div>
     </div>

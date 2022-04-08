@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\admin\DashboardController as AdminDashboardController;
-use App\Http\Controllers\admin\ProfileController as AdminProfileController;
-use App\Http\Controllers\admin\ProductController as AdminProductController;
-use App\Http\Controllers\admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\admin\GenreController as AdminGenreController;
+use App\Http\Controllers\admin\ProductController as AdminProductController;
+use App\Http\Controllers\admin\user\ProfileController as AdminProfileController;
+use App\Http\Controllers\admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\admin\DashboardController as AdminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ use App\Http\Controllers\admin\GenreController as AdminGenreController;
 */
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Route::get('/mangas', [ProductController::class, 'index'])->name('mangas');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');

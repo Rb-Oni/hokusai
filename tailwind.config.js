@@ -34,6 +34,7 @@ module.exports = {
       },
       height: {
         '90': '22rem',
+        '28rem': '28rem',
         '31rem': '31rem',
         '70vh': '70vh',
         '45vh': '45vh',
@@ -50,6 +51,7 @@ module.exports = {
         'haikyu': "url('/img/haikyu.jpg')",
         'vs': "url('/img/vs.jpg')",
         'genres': "url('/img/back.png')",
+        'manga': "url('/img/manga.jpg')",
       }
     },
   },

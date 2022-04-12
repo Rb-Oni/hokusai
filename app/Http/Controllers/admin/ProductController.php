@@ -178,6 +178,9 @@ class ProductController extends Controller
             $request->img->storeAs('products', $request->img->getClientOriginalName(), 'public');
         }
 
+        $product->genres()->detach($product->genre_id);
+        $product->genres()->attach($request->genre_id);
+
         return redirect()->route('admin.products.edit', $product->id)->with('message', 'Produit modifié avec succès');
     }
 

@@ -52,7 +52,11 @@ module.exports = {
         'vs': "url('/img/vs.jpg')",
         'genres': "url('/img/back.png')",
         'manga': "url('/img/manga.jpg')",
-      }
+      },
+      backgroundSize: {
+        '100%': '100%',
+        '105%': '105%',
+      },
     },
   },
 

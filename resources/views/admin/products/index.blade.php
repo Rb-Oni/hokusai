@@ -33,28 +33,25 @@
             <div class="bg-white shadow-md rounded my-6">
                 <table class="min-w-max w-full table-auto">
                     <thead class="">
-                        <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                            <th class="py-3 px-6 text-center">Image</th>
+                        <tr class="bg-greenc text-white uppercase text-md leading-normal">
                             <th class="py-3 px-6 text-center">Nom</th>
                             <th class="py-3 px-6 text-center">Catégorie</th>
                             <th class="py-3 px-6 text-center">Genres</th>
+                            <th class="py-3 px-6 text-center">Auteur</th>
+                            <th class="py-3 px-6 text-center">Date de sortie</th>
                             <th class="py-3 px-6 text-center">Action</th>
                         </tr>
                     </thead>
-                    <tbody class="text-gray-600 text-sm font-light">
+                    <tbody class="text-black text-md">
 
                         @foreach($products as $product)
                         <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
-                            <td class="py-3 px-6 text-left">
+                            <td class="py-3 px-6">
                                 <div class="flex items-center justify-center">
-                                    <div class="mr-2">
+                                    <div class="text-center">
+                                        <span class="font-bold text-2xl">{{ $product->name }}</span>
                                         <img class="object-scale-down h-60 w-60" src="{{ asset('storage/products/'.$product->img) }}">
                                     </div>
-                                </div>
-                            </td>
-                            <td class="py-3 px-6 text-left">
-                                <div class="flex items-center justify-center max-w-name">
-                                    <span class="font-bold">{{ $product->name }}</span>
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-center">
@@ -68,6 +65,16 @@
                                     <span>{{ $genre->name }}</span>
                                 </div>
                                 @endforeach
+                            </td>
+                            <td class="py-3 px-6 text-center">
+                                <div class="flex items-center justify-center">
+                                    <span>{{ $product->author }}</span>
+                                </div>
+                            </td>
+                            <td class="py-3 px-6 text-center">
+                                <div class="flex items-center justify-center">
+                                    <span>{{ date('d M Y', strtotime($product->date)) }}</span>
+                                </div>
                             </td>
                             <td class="py-3 px-6 text-center">
                                 <div class="flex item-center justify-center">

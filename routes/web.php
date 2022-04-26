@@ -21,7 +21,7 @@ use App\Http\Controllers\admin\DashboardController as AdminDashboardController;
 */
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
-Route::get('/mangas', [ProductController::class, 'index'])->name('mangas');
+Route::get('/mangas', [ProductController::class, 'show'])->name('mangas');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');

@@ -2,7 +2,7 @@
 
 
 @section('title')
-{{ $product->name }} | Hokusai
+{{ $product->name }} - Tome {{ $product->volume }} | Hokusai
 @endsection
 
 @section('content')

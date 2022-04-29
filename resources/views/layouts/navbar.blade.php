@@ -8,7 +8,7 @@
             <div x-data="{ open: true }" class="flex flex-col pr-4 lg:items-end lg:justify-between lg:flex-row lg:pr-12">
                 <div class="flex flex-row justify-between">
                     <div class="flex justify-end bg-black w-96 lg:w-32rem">
-                        <a class="" href="{{ route('welcome') }}"><img src="img/logo_black.png" alt="Hokusai logo" class=""></a>
+                        <a class="" href="{{ route('welcome') }}"><img src="{{ asset('img/logo_black.png') }}" alt="Hokusai logo" class=""></a>
                     </div>
                     <button class="rounded-lg lg:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                         <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">

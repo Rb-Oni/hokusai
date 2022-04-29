@@ -4,7 +4,7 @@
     <div class="bg-manga bg-cover bg-top">
         @endif
 
-        <div class="container-fluid relative bg-white bg-opacity-95 text-black">
+        <div class="container-fluid relative bg-white bg-opacity-95 text-black {{  Route::is('manga') ? 'border-b-4 border-black' : ''  }}">
             <div x-data="{ open: true }" class="flex flex-col pr-4 lg:items-end lg:justify-between lg:flex-row lg:pr-12">
                 <div class="flex flex-row justify-between">
                     <div class="flex justify-end bg-black w-96 lg:w-32rem">

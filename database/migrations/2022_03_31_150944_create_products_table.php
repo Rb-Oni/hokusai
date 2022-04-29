@@ -27,7 +27,7 @@ return new class extends Migration
             $table->float('digital_price')->nullable();
             $table->integer('quantity')->nullable();
             $table->text('synopsis')->nullable();
-            $table->string('language')->default('français')->nullable();
+            $table->string('language')->nullable();
             $table->string('isbn10')->nullable();
             $table->string('isbn30')->nullable();
             $table->integer('pages')->nullable();

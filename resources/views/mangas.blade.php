@@ -17,10 +17,14 @@ Mangas | Hokusai
 <div class="container mx-auto py-16">
 
     <section>
+        DROPDOWNS
+    </section>
+
+    <section>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             @foreach($products as $product)
-            <a href="#" class="group">
-                <div class="bg-100% bg-top h-28rem flex items-end group-hover:bg-105% duration-300" style="background-image: url({{ asset('storage/products/'.$product->img) }})">
+            <a href="{{ route('manga', $product) }}" class="group">
+                <div class="bg-100% bg-top h-28rem flex items-end group-hover:bg-105% duration-300" style="background-image: url('{{ asset('storage/products/'.$product->img) }}')">
                     <div class="flex text-lg text-white font-semibold bg-black ml-auto mb-2">
                         <p class="px-3 py-1">Tome {{ $product->volume }}</p>
                     </div>

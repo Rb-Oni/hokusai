@@ -12,14 +12,14 @@
     <section>
         <div class="flex flex-row">
             <img src="{{ asset('storage/products/'.$product->img) }}" alt="{{ $product->name }}" class="w-1/3">
-            <div class="text-black pl-11">
+            <div class="text-black pl-11 w-43rem">
                 <h1 class="text-5xl font-bold pb-3">{{ $product->name }} - Tome {{ $product->volume }}</h1>
                 <div class="w-10/12">
-                    <div class="flex justify-between items-end pb-11">
+                    <div class="flex flex-wrap justify-between items-end pb-11">
                         <h2 class="text-2xl font-semibold">de <a href="#" class="text-red-500">{{ $product->author }}</a> - {{ date('d M Y', strtotime($product->date)) }}</h2>
                         <a href="#" class="text-xl font-semibold uppercase text-greenc bg-white px-2 py-1">nouveauté</a>
                     </div>
-                    <div class="flex justify-between items-end text-4xl pb-11">
+                    <div class="flex justify-between items-center text-4xl pb-11">
                         <a href="#" class="font-bold text-greenc bg-white px-3 py-2">{{ $product->fv_editor }}</a>
                         <a href="#" class="font-semibold">{{ $product->category->name }}</a>
                         <span class="font-semibold text-2xl">12 ans et +</span>
@@ -65,15 +65,15 @@
 <div class="bg-white mb-16">
 
     <section x-data="{ openTab: 1 }" class="container mx-auto py-8">
-        <ul class="flex">
-            <li @click="openTab = 1" :class="{ ' h-1.5 bg-greenc':openTab === 1 }">
-                <button :class"openTab===1 ? activeClasses : inactiveClasses" class="text-4xl text-black font-bold after:content-[''] after:block after:w-0 after:h-1.5 after:bg-greenc hover:after:w-full hover:after:duration-300">Synopsis</button>
+        <ul class="flex items-center">
+            <li @click="openTab = 1" :class="{ 'text-greenc':openTab === 1 }">
+                <button :class"openTab===1 ? activeClasses : inactiveClasses" class="text-4xl font-bold">Synopsis</button>
             </li>
-            <li @click="openTab = 2" :class="{ 'h-1.5 bg-greenc':openTab === 2 }" class="mx-6">
-                <button :class"openTab===2 ? activeClasses : inactiveClasses" class="text-4xl text-black font-bold after:content-[''] after:block after:w-0 after:h-1.5 after:bg-greenc hover:after:w-full hover:after:duration-300">Détails sur le produits</button>
+            <li @click="openTab = 2" :class="{ 'text-greenc':openTab === 2 }" class="mx-6">
+                <button :class"openTab===2 ? activeClasses : inactiveClasses" class="text-4xl font-bold">Détails sur le produits</button>
             </li>
-            <li @click="openTab = 3" :class="{ 'h-1.5 bg-greenc':openTab === 3 }">
-                <button :class"openTab===3 ? activeClasses : inactiveClasses" class="text-4xl text-black font-bold after:content-[''] after:block after:w-0 after:h-1.5 after:bg-greenc hover:after:w-full hover:after:duration-300">Présentation</button>
+            <li @click="openTab = 3" :class="{ 'text-greenc':openTab === 3 }">
+                <button :class"openTab===3 ? activeClasses : inactiveClasses" class="text-4xl font-bold">Présentation</button>
             </li>
         </ul>
         <div class="w-full pt-6">

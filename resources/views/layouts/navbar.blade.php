@@ -19,8 +19,8 @@
                 </div>
                 <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden mx-5 pb-4 lg:pb-2 lg:flex lg:justify-start lg:flex-row">
                     <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('mangas') }}">MANGAS</a>
-                    <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="#">CONTACT</a>
-                    <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="#">CALENDRIER</a>
+                    <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('contact') }}">CONTACT</a>
+                    <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('calendar') }}">CALENDRIER</a>
                 </nav>
                 <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 lg:pb-2 lg:flex lg:justify-end lg:flex-row">
                     <a class="hover:text-greenc mr-4" href="#">

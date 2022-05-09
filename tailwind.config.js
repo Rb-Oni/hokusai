@@ -53,6 +53,10 @@ module.exports = {
         'vs': "url('/img/vs.jpg')",
         'genres': "url('/img/back.png')",
         'manga': "url('/img/manga.jpg')",
+        'drstone': "url('/img/drstonesuggest.jpg')",
+        'opm': "url('/img/opmsuggest.jpg')",
+        'tpn': "url('/img/tpnsuggest.jpg')",
+        'dbz': "url('/img/dbzsuggest.jpg')",
       },
       backgroundSize: {
         '100%': '100%',

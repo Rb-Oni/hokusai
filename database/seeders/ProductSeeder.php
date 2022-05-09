@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Genre;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -38,7 +39,11 @@ class ProductSeeder extends Seeder
                 'title' => 'Boku no Hero Academia / 僕のヒーローアカデミア',
                 'origin' => 'Japon',
                 'fv_volumes_number' => '28',
-                'ov_volumes_number' => '30'
+                'ov_volumes_number' => '30',
+                'genres' => [
+                    '1',
+                    '2'
+                ]
             ],
             [
                 'img' => 'berserk.jpg',
@@ -62,13 +67,17 @@ class ProductSeeder extends Seeder
                 'title' => 'Berserk / ベルセルク',
                 'origin' => 'Japon',
                 'fv_volumes_number' => '41',
-                'ov_volumes_number' => '41'
+                'ov_volumes_number' => '41',
+                'genres' => [
+                    '1',
+                    '2'
+                ]
             ],
         ];
 
         foreach ($products as $product) {
             try {
-                Product::firstOrCreate([
+                $tmp_product = Product::firstOrCreate([
                     'img' => $product['img'],
                     'name' => $product['name'],
                     'category_id' => $product['category_id'],
@@ -92,6 +101,7 @@ class ProductSeeder extends Seeder
                     'fv_volumes_number' => $product['fv_volumes_number'],
                     'ov_volumes_number' => $product['ov_volumes_number']
                 ]);
+                $tmp_product->genres()->attach(Genre::find($product['genres']));
             } catch (\Exception $exception) {
                 if ($exception->getCode() == "23000") {
                     dump('Product "' . $product['name'] . '" already exist');

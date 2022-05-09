@@ -21,8 +21,8 @@ use App\Http\Controllers\admin\DashboardController as AdminDashboardController;
 */
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
-Route::get('/mangas', [ProductController::class, 'index'])->name('mangas');
-Route::get('/manga/{id}', [ProductController::class, 'show'])->name('manga');
+Route::get('/mangas', [ProductController::class, 'index'])->name('mangas.index');
+Route::get('/mangas/{name}', [ProductController::class, 'show'])->name('mangas.show');
 Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
 Route::get('/calendrier', [WelcomeController::class, 'calendar'])->name('calendar');
 

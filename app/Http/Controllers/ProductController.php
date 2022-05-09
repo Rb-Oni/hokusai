@@ -21,10 +21,11 @@ class ProductController extends Controller
         ]);
     }
 
-    public function show($id)
+    public function show(string $name)
     {
-        $product = Product::find($id);
-        
+        $name = str_replace('-', ' ', $name);
+        $product = Product::where('name', '=', $name)->first();
+
         // $categories = Category::all();
         $genres = Genre::all();
 

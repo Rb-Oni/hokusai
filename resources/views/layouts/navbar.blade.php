@@ -1,10 +1,10 @@
 @if(Route::is('welcome'))
 <div class="bg-mha bg-cover bg-top">
-    @elseif(Route::is('mangas'))
+    @elseif(Route::is('mangas.index'))
     <div class="bg-manga bg-cover bg-top">
         @endif
 
-        <div class="container-fluid relative bg-white bg-opacity-95 text-black {{  Route::is('manga') ? 'border-b-4 border-black' : ''  }}">
+        <div class="container-fluid relative bg-white bg-opacity-95 text-black {{  Route::is('welcome') || Route::is('mangas.index')  ? '' : 'border-b-4 border-black'  }}">
             <div x-data="{ open: true }" class="flex flex-col pr-4 lg:items-end lg:justify-between lg:flex-row lg:pr-12">
                 <div class="flex flex-row justify-between">
                     <div class="flex justify-end bg-black w-96 lg:w-32rem">
@@ -18,7 +18,7 @@
                     </button>
                 </div>
                 <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden mx-5 lg:pb-2 lg:flex lg:justify-start lg:flex-row">
-                    <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('mangas') }}">MANGAS</a>
+                    <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('mangas.index') }}">MANGAS</a>
                     <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('contact') }}">CONTACT</a>
                     <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('calendar') }}">CALENDRIER</a>
                 </nav>

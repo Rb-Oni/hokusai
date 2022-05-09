@@ -15,9 +15,4 @@ class WelcomeController extends Controller
     {
         return view('contact');
     }
-
-    public function calendar()
-    {
-        return view('calendar');
-    }
 }

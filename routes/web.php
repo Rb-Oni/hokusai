@@ -3,11 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\admin\GenreController as AdminGenreController;
 use App\Http\Controllers\admin\ProductController as AdminProductController;
-use App\Http\Controllers\admin\user\ProfileController as AdminProfileController;
 use App\Http\Controllers\admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\admin\user\ProfileController as AdminProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::get('/mangas', [ProductController::class, 'index'])->name('mangas.index');
 Route::get('/mangas/{name}', [ProductController::class, 'show'])->name('mangas.show');
 Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
-Route::get('/calendrier', [WelcomeController::class, 'calendar'])->name('calendar');
+Route::get('/calendrier', [CalendarController::class, 'show'])->name('calendar');
 
 
 Route::group(['middleware' => 'auth'], function () {

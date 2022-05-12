@@ -17,13 +17,13 @@ class ProductController extends Controller
         }
 
         return view('mangas', [
-            'products' => $products->orderBy('id', 'DESC')->paginate(16),
+            'products' => $products->orderBy('id', 'ASC')->paginate(16),
         ]);
     }
 
     public function show(string $name)
     {
-        $name = str_replace('-', ' ', $name);
+        $name = str_replace('+', ' ', $name);
         $product = Product::where('name', '=', $name)->first();
 
         // $categories = Category::all();

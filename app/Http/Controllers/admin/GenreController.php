@@ -16,7 +16,7 @@ class GenreController extends Controller
      */
     public function index()
     {
-        $genres = Genre::orderBy('id', 'asc')->paginate(10);
+        $genres = Genre::orderBy('id', 'asc')->paginate(16);
 
         return view('admin.genres.index', compact('genres'));
     }

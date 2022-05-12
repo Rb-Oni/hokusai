@@ -12,7 +12,7 @@
     <div>
         <div class="flex flex-row">
             <img src="{{ asset('storage/products/'.$product->img) }}" alt="{{ $product->name }}" class="w-1/3">
-            <div class="text-black pl-11 w-43rem">
+            <div class="text-black pl-11 w-45rem">
                 <h1 class="text-5xl font-bold pb-3">{{ $product->name }} - Tome {{ $product->volume }}</h1>
                 <div class="w-10/12">
                     <div class="flex flex-wrap justify-between items-end pb-11">
@@ -146,28 +146,28 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <a href="#" class="group">
-                <div class="bg-drstone bg-cover bg-center h-80 flex items-end">
+                <div class="bg-drstonesuggest bg-cover bg-center h-80 flex items-end">
                     <div class="flex text-xl text-white font-bold bg-black group-hover:text-black group-hover:bg-white duration-150 mx-auto w-full h-10">
                         <p class="my-auto mx-auto">Dr. Stone</p>
                     </div>
                 </div>
             </a>
             <a href="#" class="group">
-                <div class="bg-opm bg-cover bg-center h-80 flex items-end">
+                <div class="bg-opmsuggest bg-cover bg-center h-80 flex items-end">
                     <div class="flex text-xl text-white font-bold bg-black group-hover:text-black group-hover:bg-white duration-150 mx-auto w-full h-10">
                         <p class="my-auto mx-auto">One Punch Man</p>
                     </div>
                 </div>
             </a>
             <a href="#" class="group">
-                <div class="bg-tpn bg-cover bg-center h-80 flex items-end">
+                <div class="bg-tpnsuggest bg-cover bg-center h-80 flex items-end">
                     <div class="flex text-xl text-white font-bold bg-black group-hover:text-black group-hover:bg-white duration-150 mx-auto w-full h-10">
                         <p class="my-auto mx-auto">The Promised Neverland</p>
                     </div>
                 </div>
             </a>
             <a href="#" class="group">
-                <div class="bg-dbz bg-cover bg-center h-80 flex items-end">
+                <div class="bg-dbzsuggest bg-cover bg-center h-80 flex items-end">
                     <div class="flex text-xl text-white font-bold bg-black group-hover:text-black group-hover:bg-white duration-150 mx-auto w-full h-10">
                         <p class="my-auto mx-auto">Dragon Ball Z</p>
                     </div>

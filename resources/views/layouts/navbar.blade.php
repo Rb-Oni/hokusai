@@ -1,5 +1,5 @@
 @if(Route::is('welcome'))
-<div class="bg-mha bg-cover bg-top">
+<div class="xl:bg-mha xl:bg-cover xl:bg-top">
     @elseif(Route::is('mangas.index'))
     <div class="bg-manga bg-cover bg-top">
         @endif
@@ -21,6 +21,14 @@
                     <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('mangas.index') }}">MANGAS</a>
                     <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('contact') }}">CONTACT</a>
                     <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('calendar') }}">CALENDRIER</a>
+                </nav>
+                <nav  :class="{'flex': open, 'hidden': !open}" class="hidden mx-5 pb-4 xl:block">
+                    <form action="" method="GET" class="bg-gray-100 px-2 flex items-center">
+                        <input type="search" name="search" id="search" class="form-control text-black bg-gray-100 border-0 transition ease-in-out focus:border-transparent focus:ring-0" placeholder="Rechercher un manga" aria-label="Search" aria-describedby="button-addon2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </form>
                 </nav>
                 <nav :class="{'flex': open, 'hidden': !open}" class="flex-grow hidden mx-5 pb-4 lg:pb-2 lg:flex lg:justify-end flex-row">
                     <a class="hover:text-greenc mr-4" href="#">

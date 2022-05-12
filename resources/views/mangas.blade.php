@@ -20,6 +20,9 @@ Mangas | Hokusai
         DROPDOWNS
     </section>
 
+    @if($products->isEmpty())
+    <h1 class="font-bold font-times text-4xl text-center mt-12">Aucun manga trouvé</h1>
+    @else
     <section>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             @foreach($products as $product)
@@ -37,6 +40,7 @@ Mangas | Hokusai
             @endforeach
         </div>
     </section>
+    @endif
 
     {{ $products->appends(['search' => request('search')])->links('vendor.pagination.default') }}
 

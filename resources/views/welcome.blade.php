@@ -7,8 +7,8 @@ Hokusai
 
 @section('content')
 
-<div class="container mx-auto h-45vh flex justify-end items-end">
-    <div class="w-32rem px-6 py-8 bg-white bg-opacity-95 hover:bg-black hover:bg-opacity-95 hover:text-white duration-150">
+<div class="container mx-auto xl:h-45vh flex justify-end items-end">
+    <div class="hidden xl:block w-32rem px-6 py-8 bg-white bg-opacity-95 hover:bg-black hover:bg-opacity-95 hover:text-white duration-150">
         <a href="#" class="text-3xl">
             <p class="font-bold mb-5">MY HERO ACADEMIA</p>
             <p>Action, comédie, ée, super héros et super pouvoirs — Le dernier manga d'Horikoshi Kouhei</p>

@@ -38,7 +38,7 @@ Mangas | Hokusai
         </div>
     </section>
 
-    {{ $products->appends(['search' => request('search')])->links() }}
+    {{ $products->appends(['search' => request('search')])->links('vendor.pagination.default') }}
 
 </div>
 

@@ -114,17 +114,17 @@
 <section class="container mx-auto pb-16">
     <div class="mb-8 flex flex-row justify-between items-end">
         <div class="">
-            <a href="#" class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-greenc after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 text-5xl font-bold">
+            <a href="!#" class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-greenc after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 text-5xl font-bold">
                 <h2><span>La série complète</span></h2>
             </a>
         </div>
         <div class="hidden md:block">
-            <a href="#" class="text-xl font-semibold hover:text-greenc duration-150">Voir tout</a>
+            <a href="!#" class="text-xl font-semibold hover:text-greenc duration-150">Voir tout</a>
         </div>
     </div>
     <!-- foreach ICI -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a href="#" class="group">
+        <a href="!#" class="group">
             <div class="bg-100% bg-top h-28rem flex items-end group-hover:bg-105% duration-300" style="background-image: url('{{ asset('storage/products/'.$product->img) }}')">
                 <div class="flex text-lg text-white font-semibold bg-black ml-auto mb-2">
                     <p class="px-3 py-1">Tome 25</p>
@@ -145,28 +145,28 @@
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <a href="#" class="group">
+            <a href="!#" class="group">
                 <div class="bg-drstonesuggest bg-cover bg-center h-80 flex items-end">
                     <div class="flex text-xl text-white font-bold bg-black group-hover:text-black group-hover:bg-white duration-150 mx-auto w-full h-10">
                         <p class="my-auto mx-auto">Dr. Stone</p>
                     </div>
                 </div>
             </a>
-            <a href="#" class="group">
+            <a href="!#" class="group">
                 <div class="bg-opmsuggest bg-cover bg-center h-80 flex items-end">
                     <div class="flex text-xl text-white font-bold bg-black group-hover:text-black group-hover:bg-white duration-150 mx-auto w-full h-10">
                         <p class="my-auto mx-auto">One Punch Man</p>
                     </div>
                 </div>
             </a>
-            <a href="#" class="group">
+            <a href="!#" class="group">
                 <div class="bg-tpnsuggest bg-cover bg-center h-80 flex items-end">
                     <div class="flex text-xl text-white font-bold bg-black group-hover:text-black group-hover:bg-white duration-150 mx-auto w-full h-10">
                         <p class="my-auto mx-auto">The Promised Neverland</p>
                     </div>
                 </div>
             </a>
-            <a href="#" class="group">
+            <a href="!#" class="group">
                 <div class="bg-dbzsuggest bg-cover bg-center h-80 flex items-end">
                     <div class="flex text-xl text-white font-bold bg-black group-hover:text-black group-hover:bg-white duration-150 mx-auto w-full h-10">
                         <p class="my-auto mx-auto">Dragon Ball Z</p>

@@ -927,6 +927,34 @@ class ProductSeeder extends Seeder
                     '16',
                 ]
             ],
+            [
+                'img' => 'drstone.jpg',
+                'name' => 'Dr. Stone',
+                'category_id' => '1',
+                'volume' => '1',
+                'author' => 'Riichirô Inagaki',
+                'date' => '2018-04-04',
+                'fv_editor' => 'Glénat',
+                'ov_editor' => 'Shūeisha',
+                'paperback_price' => '6.99',
+                'digital_price' => '4.99',
+                'quantity' => '20',
+                'synopsis' => "Taiju, un lycéen tokyoïte, est un jour victime d’un phénomène mystérieux : en une fraction de seconde, l’humanité entière est transformée en pierre ! Des milliers d’années plus tard, à son réveil, il décide de rebâtir la civilisation à partir de zéro avec son ami Senku !! Ne manquez pas ce mélange détonnant de récit de survie et d’aventure S.F.  !!",
+                'language' => 'Français',
+                'isbn10' => '234402803X',
+                'isbn30' => '978-2344028032',
+                'pages' => '192',
+                'weight' => '140',
+                'size' => '11.5 x 1.4 x 18',
+                'title' => 'Dr.STONE / ドクターストーン',
+                'origin' => 'Japon',
+                'fv_volumes_number' => '21',
+                'ov_volumes_number' => '26',
+                'genres' => [
+                    '2',
+                    '10',
+                ]
+            ],
         ];
 
         foreach ($products as $product) {

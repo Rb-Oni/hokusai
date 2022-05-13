@@ -47,7 +47,7 @@
                             Hokusai
                         </x-dropdown-link>
 
-                        <x-dropdown-link :href="route('profile')">
+                        <x-dropdown-link :href="route('admin.profile')">
                             {{ __('My Profile') }}
                         </x-dropdown-link>
 
@@ -105,7 +105,7 @@
                     Hokusai
                 </x-responsive-nav-link>
 
-                <x-responsive-nav-link :href="route('profile')">
+                <x-responsive-nav-link :href="route('admin.profile')">
                     {{ __('My Profile') }}
                 </x-responsive-nav-link>
 

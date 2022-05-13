@@ -2,7 +2,7 @@
 
 
 @section('title')
-Mangas | Hokusai
+Recherche | Hokusai
 @endsection
 
 @section('content')

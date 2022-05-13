@@ -2,7 +2,7 @@
 
 
 @section('title')
-Contact | Hokusai
+Mon profil | Hokusai
 @endsection
 
 @section('content')
@@ -38,7 +38,6 @@ Contact | Hokusai
         </ul>
         <div class="w-full">
             <div x-show="openTab === 1">
-
                 <section class="flex py-8">
                     <div class="mr-8">
                         <img src="{{ asset('storage/products/berserk.jpg') }}" class="h-60 w-60 rounded-full" alt="">

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductController;
@@ -30,12 +31,13 @@ Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
 Route::get('/calendrier', [CalendarController::class, 'show'])->name('calendar');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+Route::get('/cart', [CartController::class, 'cart'])->name('cart');
 
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 
-    Route::view('/admin/profile', 'admin.user.profile')->name('profile');
+    Route::view('/admin/profile', 'admin.user.profile')->name('admin.profile');
     Route::put('/admin/profile', [AdminProfileController::class, 'update'])->name('profile.update');
 
     Route::resource('products', AdminProductController::class, ['names' => [

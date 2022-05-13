@@ -22,12 +22,12 @@ Hokusai
     <section>
         <div class="mb-8 flex flex-row justify-between items-end">
             <div class="">
-                <a href="#" class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-greenc after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 text-5xl font-bold">
+                <a href="{{ route('mangas.index')}}" class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-greenc after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 text-5xl font-bold">
                     <h2><span>Tendances</span></h2>
                 </a>
             </div>
             <div class="hidden md:block">
-                <a href="#" class="text-xl font-semibold hover:text-greenc duration-150">Voir les mangas du moment</a>
+                <a href="{{ route('mangas.index')}}" class="text-xl font-semibold hover:text-greenc duration-150">Voir les mangas du moment</a>
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WelcomeController;
@@ -28,13 +29,14 @@ Route::get('/mangas/{name}', [ProductController::class, 'show'])->name('mangas.s
 Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
 Route::get('/calendrier', [CalendarController::class, 'show'])->name('calendar');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 
-    Route::view('profile', 'admin.user.profile')->name('profile');
-    Route::put('profile', [AdminProfileController::class, 'update'])->name('profile.update');
+    Route::view('/admin/profile', 'admin.user.profile')->name('profile');
+    Route::put('/admin/profile', [AdminProfileController::class, 'update'])->name('profile.update');
 
     Route::resource('products', AdminProductController::class, ['names' => [
         'index' => 'admin.products.index',

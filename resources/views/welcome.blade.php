@@ -11,7 +11,7 @@ Hokusai
     <div class="hidden xl:block w-32rem px-6 py-8 bg-white bg-opacity-95 hover:bg-black hover:bg-opacity-95 hover:text-white duration-150">
         <a href="#" class="text-3xl">
             <p class="font-bold mb-5">MY HERO ACADEMIA</p>
-            <p>Action, comédie, ée, super héros et super pouvoirs — Le dernier manga d'Horikoshi Kouhei</p>
+            <p>Action, comédie, école, super héros et super pouvoirs — Le dernier manga d'Horikoshi Kouhei</p>
         </a>
     </div>
 </div>

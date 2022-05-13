@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CalendarController;
@@ -26,6 +27,7 @@ Route::get('/mangas', [ProductController::class, 'index'])->name('mangas.index')
 Route::get('/mangas/{name}', [ProductController::class, 'show'])->name('mangas.show');
 Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
 Route::get('/calendrier', [CalendarController::class, 'show'])->name('calendar');
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 
 Route::group(['middleware' => 'auth'], function () {

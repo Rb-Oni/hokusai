@@ -40,16 +40,16 @@ Contact | Hokusai
             <div class="grid grid-flow-row">
                 <div class="flex flex-col">
                     <label for="object" class="text-2xl font-semibold mb-1">Objet</label>
-                    <input type="text" class="border border-gray-300" placeholder="Saisissez un objet" name="object" id="object">
+                    <input type="text" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Saisissez un objet" name="object" id="object">
                 </div>
                 <div class="flex flex-col justify-end">
                     <label for="mail" class="text-2xl font-semibold mb-1">E-Mail</label>
-                    <input type="email" class="border border-gray-300" placeholder="Saisissez votre adresse mail" name="mail" id="mail">
+                    <input type="email" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Saisissez votre adresse mail" name="mail" id="mail">
                 </div>
             </div>
             <div class="flex flex-col">
                 <label for="message" class="text-2xl font-semibold mb-1">Message</label>
-                <textarea class="border border-gray-300" rows="5" placeholder="Saisissez votre message" name="message" id="message"></textarea>
+                <textarea class="border border-gray-300 focus:ring-0 focus:border-greenc" rows="5" placeholder="Saisissez votre message" name="message" id="message"></textarea>
             </div>
         </div>
         <div class="text-center mt-6">

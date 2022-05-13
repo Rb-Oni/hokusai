@@ -10,4 +10,14 @@ class UserController extends Controller
     {
         return view('user.profile');
     }
+    
+    public function connexion()
+    {
+        return view('user.connexion');
+    }
+
+    public function create()
+    {
+        return view('user.create');
+    }
 }

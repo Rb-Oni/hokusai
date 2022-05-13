@@ -31,6 +31,8 @@ Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
 Route::get('/calendrier', [CalendarController::class, 'show'])->name('calendar');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+Route::get('/create', [UserController::class, 'create'])->name('create');
+Route::get('/connexion', [UserController::class, 'connexion'])->name('connexion');
 Route::get('/cart', [CartController::class, 'cart'])->name('cart');
 
 

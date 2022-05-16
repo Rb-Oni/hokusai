@@ -89,6 +89,22 @@ Mon profil | Hokusai
                         @method('PUT')
                         @csrf
                         <div class="grid grid-cols-1 w-1/2 my-8 mx-auto">
+                            <fieldset class="flex flex-row gap-4 mb-4">
+                                <div>
+                                    <input type="radio" id="male" name="gender" value="male" class="border border-gray-300 focus:ring-greenc text-greenc">
+                                    <label for="male" class="align-middle">M.</label>
+                                </div>
+
+                                <div>
+                                    <input type="radio" id="female" name="gender" value="female" class="border border-gray-300 focus:ring-greenc text-greenc">
+                                    <label for="female" class="align-middle">Mme</label>
+                                </div>
+
+                                <div>
+                                    <input type="radio" id="other" name="gender" value="other" class="border border-gray-300 focus:ring-greenc text-greenc">
+                                    <label for="other" class="align-middle">Autre</label>
+                                </div>
+                            </fieldset>
                             <div class="grid grid-cols-2 gap-4 mb-4">
                                 <input type="text" name="lastname" id="lastname" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Nom" value="{{ $user->lastname }}" required autofocus>
                                 <input type="text" name="firstname" id="firstname" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Prénom" value="{{ $user->firstname }}" required>

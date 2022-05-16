@@ -22,6 +22,13 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->enum('role', ['admin', 'user'])->default('user');
+            $table->enum('gender', ['male', 'female', 'other'])->nullable();
+            $table->string('country')->nullable();
+            $table->string('address')->nullable();
+            $table->string('postcode')->nullable();
+            $table->string('city')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->string('phone')->unique()->nullable();
             $table->timestamps();
         });
     }

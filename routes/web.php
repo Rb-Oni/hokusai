@@ -32,7 +32,8 @@ Route::get('/calendrier', [CalendarController::class, 'show'])->name('calendar')
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+    Route::get('/profile', [UserController::class, 'edit'])->name('profile');
+    Route::put('/profile', [UserController::class, 'update'])->name('profile.update');
     Route::get('/cart', [CartController::class, 'cart'])->name('cart');
 });
 

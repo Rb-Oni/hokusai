@@ -9,7 +9,7 @@ Mon profil | Hokusai
 
 <div class="container mx-auto py-16">
 
-    <section x-data="{ openTab: 1 }" class="container mx-auto">
+    <section x-data="{ openTab: 3 }" class="container mx-auto">
         <ul class="grid grid-cols-3 gap-4 items-center">
             <li @click="openTab = 1" :class="{ 'text-white bg-greenc':openTab === 1 }" class="bg-white text-center py-4">
                 <button :class"openTab===1 ? activeClasses : inactiveClasses" class="text-2xl font-bold">
@@ -47,7 +47,9 @@ Mon profil | Hokusai
                             <h2 class="font-bold text-4xl mr-4">Robin FALCK</h2>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <button class="text-red-500 text-lg font-semibold" :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">Déconnexion</button>
+                                <button class="text-red-500 text-lg font-semibold" :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg><span class="align-middle">Déconnexion</span></button>
                             </form>
                         </div>
                         <span>Membre depuis : 24 octobre 2013</span>
@@ -79,6 +81,42 @@ Mon profil | Hokusai
             <div x-show="openTab === 2">
             </div>
             <div x-show="openTab === 3">
+                <x-validation-errors />
+                <x-success-message />
+                <section class="py-8">
+                    <h1 class="text-black text-center text-5xl font-bold">MODIFIER SES COORDONNÉES</h1>
+                    <form method="POST" action="{{ route('profile.update') }}">
+                        @method('PUT')
+                        @csrf
+                        <div class="grid grid-cols-1 w-1/2 my-8 mx-auto">
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <input type="text" name="lastname" id="lastname" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Nom" value="{{ $user->lastname }}" required autofocus>
+                                <input type="text" name="firstname" id="firstname" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Prénom" value="{{ $user->firstname }}" required>
+                            </div>
+                            <input type="email" name="email" id="email" class="border border-gray-300 focus:ring-0 focus:border-greenc mb-4" placeholder="Adresse e-mail" value="{{ $user->email }}" required>
+                            <select name="country" id="country" class="border border-gray-300 focus:ring-0 focus:border-greenc mb-4">
+                                <option value="Allemagne">Allemagne</option>
+                                <option value="Angleterre">Angleterre</option>
+                                <option value="Belgique">Belgique</option>
+                                <option value="France" selected>France</option>
+                                <option value="Japon">Japon</option>
+                                <option value="Suisse">Suisse</option>
+                            </select>
+                            <input type="text" name="adrress" id="adrress" class="border border-gray-300 focus:ring-0 focus:border-greenc mb-4" placeholder="Adresse" value="{{ $user->address }}">
+                            <div class="flex flex-row gap-4 mb-4">
+                                <input type="text" name="postcode" id="postcode" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Code postal" value="{{ $user->postcode }}">
+                                <input type="text" name="city" id="city" class="grow border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Ville" value="{{ $user->city }}">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <input type="date" name="birthdate" id="birthdate" class="border border-gray-300 focus:ring-0 focus:border-greenc" value="{{ $user->birthdate }}">
+                                <input type="text" name="phone" id="phone" class="grow border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Numéro de téléphone" value="{{ $user->phone }}">
+                            </div>
+                        </div>
+                        <div class="text-center mt-8 mb-4">
+                            <button type="submit" class="text-2xl text-white font-bold bg-greenc hover:bg-greenh duration-150 px-6 py-3">MODIFIER</button>
+                        </div>
+                    </form>
+                </section>
             </div>
         </div>
     </section>

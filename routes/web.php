@@ -30,17 +30,15 @@ Route::get('/mangas/{name}', [ProductController::class, 'show'])->name('mangas.s
 Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
 Route::get('/calendrier', [CalendarController::class, 'show'])->name('calendar');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
-Route::get('/profile', [UserController::class, 'profile'])->name('profile');
-Route::get('/create', [UserController::class, 'create'])->name('create');
-Route::get('/connexion', [UserController::class, 'connexion'])->name('connexion');
-Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+    Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+});
 
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
-
-    Route::view('/admin/profile', 'admin.user.profile')->name('admin.profile');
-    Route::put('/admin/profile', [AdminProfileController::class, 'update'])->name('profile.update');
 
     Route::resource('products', AdminProductController::class, ['names' => [
         'index' => 'admin.products.index',

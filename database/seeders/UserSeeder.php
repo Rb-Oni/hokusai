@@ -15,11 +15,41 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 'Robin',
-            'email' => 'robin.falck57@gmail.com',
-            'password' => '$2y$10$A33meaVfPeJghaL8krSjJOc7q2cnr5S/0J25taEEAGjvBedFAxvK2',
-            'remember_token' => 'nj2ShrGVpyJs7iRTwheFePVnsCzURZhTJxv7pFyLYZQuZ533Cplp2ECONpYm'
-        ]);
+        $users = [
+            [
+                'firstname' => 'Robin',
+                'lastname' => 'FALCK',
+                'email' => 'robin.falck57@gmail.com',
+                'password' => '$2y$10$A33meaVfPeJghaL8krSjJOc7q2cnr5S/0J25taEEAGjvBedFAxvK2',
+                'remember_token' => 'nj2ShrGVpyJs7iRTwheFePVnsCzURZhTJxv7pFyLYZQuZ533Cplp2ECONpYm',
+                'role' => 'admin'
+            ],
+            [
+                'firstname' => 'Rémi',
+                'lastname' => 'CHAMPLON',
+                'email' => 'test@test.com',
+                'password' => '$2y$10$A33meaVfPeJghaL8krSjJOc7q2cnr5S/0J25taEEAGjvBedFAxvK2',
+                'remember_token' => 'nj2ShrGVpyJs7iRTwheFePVnsCzURZhTJxv7pFyLYZQuZ533Cplp2ECONpYm',
+                'role' => 'user'
+            ]
+        ];
+        foreach ($users as $user) {
+            try {
+                User::firstOrCreate([
+                    'firstname' => $user['firstname'],
+                    'lastname' => $user['lastname'],
+                    'email' => $user['email'],
+                    'password' => $user['password'],
+                    'remember_token' => $user['remember_token'],
+                    'role' => $user['role']
+                ]);
+            } catch (\Exception $exception) {
+                if ($exception->getCode() == "23000") {
+                    dump('User "' . $user['firstname'] . '" already exist');
+                } else {
+                    dump($exception->getMessage());
+                }
+            }
+        }
     }
 }

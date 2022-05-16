@@ -23,6 +23,9 @@
                         <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('mangas.index') }}">MANGAS</a>
                         <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('contact') }}">CONTACT</a>
                         <a class="after:content-[''] after:block after:w-0 after:h-1.5 after:bg-black after:transition-width hover:after:w-full hover:after:transition-width hover:after:duration-300 font-bold text-3xl lg:mt-0 lg:ml-4" href="{{ route('calendar') }}">CALENDRIER</a>
+                        @if(Auth::user() && Auth::user()->isAdmin())
+                        <a class="font-bold text-greenc text-3xl lg:mt-0 lg:ml-4" href="{{ route('dashboard') }}">DASHBOARD</a>
+                        @endif
                     </nav>
                     <nav :class="{'flex': open, 'hidden': !open}" class="hidden mx-5 pb-2 xl:block">
                         <form action="{{ route('search') }}" method="GET" class="bg-gray-100 px-2 flex items-center">

@@ -43,7 +43,13 @@ Mon profil | Hokusai
                         <img src="{{ asset('storage/products/berserk.jpg') }}" class="h-60 w-60 rounded-full" alt="">
                     </div>
                     <div class="flex flex-col grow">
-                        <h2 class="font-bold text-4xl">Robin FALCK</h2>
+                        <div class="flex flex-row items-end">
+                            <h2 class="font-bold text-4xl mr-4">Robin FALCK</h2>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button class="text-red-500 text-lg font-semibold" :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">Déconnexion</button>
+                            </form>
+                        </div>
                         <span>Membre depuis : 24 octobre 2013</span>
                         <textarea class="border-0 focus:ring-0 h-full mt-12" name="description" id="description" placeholder="Description..." cols="" rows=""></textarea>
                     </div>

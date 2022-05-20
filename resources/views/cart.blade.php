@@ -29,12 +29,16 @@ Panier | Hokusai
         </ul>
         <div class="w-full">
             <div x-show="openTab === 1">
+                @if($carts->isEmpty())
+                <h2>ya R frer</h2>
+                @else
+                @foreach ($carts as $item)
                 <section class="bg-white p-8 flex">
                     <img src="{{ asset('storage/products/mhaprod.jpg') }}" class="h-96 mr-4" alt="">
                     <div class="grow font-semibold text-2xl">
                         <div class="flex justify-between text-3xl">
-                            <h2>My Hero Academia - Tome 1</h2>
-                            <h2 class="font-bold">6.99€</h2>
+                            <h2>NAME - Tome 1</h2>
+                            <h2 class="font-bold">{{ $cart_product->product_price }}€</h2>
                         </div>
                         <div class="flex justify-between items-end">
                             <div>
@@ -51,12 +55,18 @@ Panier | Hokusai
                 </section>
 
                 <section class="my-8 flex justify-between">
-                    <h2 class="text-3xl font-semibold"><span class="font-bold">Total</span> (1 articles) : </h2>
-                    <span class="text-3xl font-bold text-red-500">6.99€</span>
+                    <h2 class="text-3xl font-semibold"><span class="font-bold">Total</span> ({{ $cart_product->quantity }} articles) : </h2>
+                    @if($item->total = 'null')
+                    <span class="text-3xl font-bold text-red-500">0€</span>
+                    @else
+                    <span class="text-3xl font-bold text-red-500">{{ $item->total }}€</span>
+                    @endif
                 </section>
                 <div class="flex justify-end">
                     <button type="" class="text-2xl text-white font-bold bg-greenc hover:bg-greenh duration-150 py-3 px-5">ETAPE SUIVANTE</button>
                 </div>
+                @endforeach
+                @endif
             </div>
             <div x-show="openTab === 2">
             </div>

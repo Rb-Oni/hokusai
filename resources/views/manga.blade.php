@@ -40,9 +40,17 @@
                             </label>
                         </li>
                     </ul>
-                    <div class="flex justify-center text-center pb-11">
-                        <button class="text-3xl text-white font-semibold bg-greenc hover:bg-greenh duration-150 p-4 w-full">Ajouter au panier</button>
-                    </div>
+                    <form action="{{ route('cart.store') }}" method="POST" class="flex justify-center text-center pb-11">
+                        @csrf
+                        <input type="hidden" value="{{  Auth::user()->id  }}" name="user_id" id="user_id">
+                        <input type="hidden" value="" name="total" id="total">
+
+                        <input type="hidden" value="1" name="cart_id" id="cart_id">
+                        <input type="hidden" value="{{ $product->id }}" name="product_id" id="product_id">
+                        <input type="hidden" value="{{ $product->paperback_price }}" name="product_price" id="product_price">
+                        <input type="hidden" value="1" name="quantity" id="quantity">
+                        <button type="submit" class="text-3xl text-white font-semibold bg-greenc hover:bg-greenh duration-150 p-4 w-full">Ajouter au panier</button>
+                    </form>
                     <div class="flex flex-col text-2xl font-semibold">
                         <h4 class="pb-8">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline text-greenc" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

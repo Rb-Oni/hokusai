@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Genre;
 use App\Models\Category;
+use App\Models\CartProduct;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -44,5 +45,10 @@ class Product extends Model
     public function genres()
     {
         return $this->belongsToMany(Genre::class);
+    }
+
+    public function cartProduct()
+    {
+        return $this->belongsTo(CartProduct::class);
     }
 }

@@ -9,7 +9,7 @@ Mon profil | Hokusai
 
 <div class="container mx-auto py-16">
 
-    <section x-data="{ openTab: 3 }" class="container mx-auto">
+    <section x-data="{ openTab: 1 }" class="container mx-auto">
         <ul class="grid grid-cols-3 gap-4 items-center">
             <li @click="openTab = 1" :class="{ 'text-white bg-greenc':openTab === 1 }" class="bg-white text-center py-4">
                 <button :class"openTab===1 ? activeClasses : inactiveClasses" class="text-2xl font-bold">

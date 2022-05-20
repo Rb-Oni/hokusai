@@ -7,6 +7,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\CartProductController;
 use App\Http\Controllers\admin\GenreController as AdminGenreController;
 use App\Http\Controllers\admin\ProductController as AdminProductController;
 use App\Http\Controllers\admin\CategoryController as AdminCategoryController;
@@ -34,7 +35,9 @@ Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [UserController::class, 'edit'])->name('profile');
     Route::put('/profile', [UserController::class, 'update'])->name('profile.update');
-    Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+
+    Route::get('/cart', [CartController::class, 'show'])->name('cart');
+    Route::post('/cart/Store', [CartProductController::class, 'store'])->name('cart.store');
 });
 
 

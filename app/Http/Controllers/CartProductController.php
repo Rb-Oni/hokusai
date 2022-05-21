@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
 use App\Models\CartProduct;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreCartProductRequest;
 use App\Http\Requests\UpdateCartProductRequest;
 
@@ -15,18 +16,22 @@ class CartProductController extends Controller
      * @param  \App\Http\Requests\StoreCartProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCartProductRequest $request)
+    public function store(Request $request)
     {
-        Cart::create([
-            'user_id' => $request->user_id,
-            'total' => $request->total
-        ]);
-        
-        CartProduct::create([
-            'cart_id' => $request->cart_id,
+        $user = Auth::user();
+        $cart = $user->cart;
+
+        $cartProduct = CartProduct::create([
+            'cart_id' => $cart->id,
             'product_id' => $request->product_id,
             'product_price' => $request->product_price,
             'quantity' => $request->quantity
+        ]);
+
+        $total = $cart->total + ($cartProduct->quantity * $cartProduct->product_price);
+
+        $cart->update([
+            'total' => $total
         ]);
 
         return redirect()->route('cart');
@@ -52,6 +57,7 @@ class CartProductController extends Controller
      */
     public function destroy(CartProduct $cartProduct)
     {
-        //
+        $cartProduct->delete();
+        return redirect()->route('cart');
     }
 }

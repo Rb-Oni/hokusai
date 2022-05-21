@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cart;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -35,13 +36,17 @@ class UserSeeder extends Seeder
         ];
         foreach ($users as $user) {
             try {
-                User::firstOrCreate([
+                $tmpUser = User::firstOrCreate([
                     'firstname' => $user['firstname'],
                     'lastname' => $user['lastname'],
                     'email' => $user['email'],
                     'password' => $user['password'],
                     'remember_token' => $user['remember_token'],
                     'role' => $user['role']
+                ]);
+                Cart::create([
+                    'user_id' => $tmpUser->id,
+                    'total' => 0
                 ]);
             } catch (\Exception $exception) {
                 if ($exception->getCode() == "23000") {

@@ -3,21 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Product;
 use App\Models\CartProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreCartRequest;
-use App\Models\Product;
 
 class CartController extends Controller
 {
     public function show()
     {
-        $carts = Cart::where('user_id', auth()->user()->id)->get();
-        $cart_product = CartProduct::first();
+        $user = Auth::user();
+        $cart = $user->cart;
+        $cartProducts = $cart->cartProducts;
+        $cartProducts->load('product');
 
         return view('cart', [
-            'carts' => $carts,
-            'cart_product' => $cart_product
+            'cart' => $cart,
+            'cartProducts' => $cartProducts
         ]);
     }
 }

@@ -42,10 +42,6 @@
                     </ul>
                     <form action="{{ route('cart.store') }}" method="POST" class="flex justify-center text-center pb-11">
                         @csrf
-                        <input type="hidden" value="{{  Auth::user()->id  }}" name="user_id" id="user_id">
-                        <input type="hidden" value="" name="total" id="total">
-
-                        <input type="hidden" value="1" name="cart_id" id="cart_id">
                         <input type="hidden" value="{{ $product->id }}" name="product_id" id="product_id">
                         <input type="hidden" value="{{ $product->paperback_price }}" name="product_price" id="product_price">
                         <input type="hidden" value="1" name="quantity" id="quantity">

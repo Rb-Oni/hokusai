@@ -29,43 +29,43 @@ Panier | Hokusai
         </ul>
         <div class="w-full">
             <div x-show="openTab === 1">
-                @if($carts->isEmpty())
+                @if($cartProducts->isEmpty())
                 <h2>ya R frer</h2>
                 @else
-                @foreach ($carts as $item)
-                <section class="bg-white p-8 flex">
-                    <img src="{{ asset('storage/products/mhaprod.jpg') }}" class="h-96 mr-4" alt="">
+                @foreach ($cartProducts as $item)
+                <section class="bg-white p-8 flex {{ $loop->last ? '' : 'border-b-4 border-black' }}">
+                    <img src="{{ asset('storage/products/' . $item->product->img) }}" class="h-96 mr-4" alt="{{ $item->product->name }}">
                     <div class="grow font-semibold text-2xl">
                         <div class="flex justify-between text-3xl">
-                            <h2>NAME - Tome 1</h2>
-                            <h2 class="font-bold">{{ $cart_product->product_price }}€</h2>
+                            <h2>{{ $item->product->name }} - Tome {{ $item->product->volume }}</h2>
+                            <h2 class="font-bold">{{ $item->product_price }}€</h2>
                         </div>
                         <div class="flex justify-between items-end">
                             <div>
                                 <h2 class="font-bold">Quantité</h2>
                                 <input type="number" name="quantity" min="1" value="1">
                             </div>
-                            <button type="">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-greenc" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
+                            <form action="{{ route('cart.destroy', $item->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-greenc hover:text-greenh duration-150" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </section>
+                @endforeach
 
                 <section class="my-8 flex justify-between">
-                    <h2 class="text-3xl font-semibold"><span class="font-bold">Total</span> ({{ $cart_product->quantity }} articles) : </h2>
-                    @if($item->total = 'null')
-                    <span class="text-3xl font-bold text-red-500">0€</span>
-                    @else
-                    <span class="text-3xl font-bold text-red-500">{{ $item->total }}€</span>
-                    @endif
+                    <h2 class="text-3xl font-semibold"><span class="font-bold">Total</span> ({{ $item->count('quantity') }} article{{ $item->count('quantity') == 1 ? '' : 's' }}) : </h2>
+                    <span class="text-3xl font-bold text-red-500">{{ $cart->total }}€</span>
                 </section>
                 <div class="flex justify-end">
                     <button type="" class="text-2xl text-white font-bold bg-greenc hover:bg-greenh duration-150 py-3 px-5">ETAPE SUIVANTE</button>
                 </div>
-                @endforeach
                 @endif
             </div>
             <div x-show="openTab === 2">

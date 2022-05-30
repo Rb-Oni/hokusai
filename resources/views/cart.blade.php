@@ -38,13 +38,18 @@ Panier | Hokusai
                     <div class="grow font-semibold text-2xl">
                         <div class="flex justify-between text-3xl">
                             <h2>{{ $item->product->name }} - Tome {{ $item->product->volume }}</h2>
-                            <h2 class="font-bold">{{ $item->product_price }}€</h2>
+                            <h2 class="font-bold">{{ $item->quantity * $item->product_price }}€</h2>
                         </div>
                         <div class="flex justify-between items-end">
-                            <div>
-                                <h2 class="font-bold">Quantité</h2>
-                                <input type="number" name="quantity" min="1" value="1">
-                            </div>
+                            <form action="{{ route('cart.update', $item) }}" method="POST" class="flex justify-between items-end">
+                                @csrf
+                                @method('PUT')
+                                <div>
+                                    <h2 class="font-bold">Quantité</h2>
+                                    <input type="number" name="quantity" id="quantity" min="1" value="{{ $item->quantity }}">
+                                    <button type="submit" class="text-xl text-white font-bold bg-greenc hover:bg-greenh duration-150 py-2 px-3">Update</button>
+                                </div>
+                            </form>
                             <form action="{{ route('cart.destroy', $item) }}" method="POST">
                                 @csrf
                                 @method('DELETE')

@@ -46,7 +46,7 @@ class CartProductController extends Controller
         $cartProducts = CartProduct::where('cart_id', $cart->id)->get();
         $total = 0;
         foreach ($cartProducts as $cartProduct) {
-            $price = 0 + ($cartProduct->quantity * $cartProduct->product_price);
+            $price = $cartProduct->quantity * $cartProduct->product_price;
             $total += $price;
         }
 
@@ -66,7 +66,25 @@ class CartProductController extends Controller
      */
     public function update(UpdateCartProductRequest $request, CartProduct $cartProduct)
     {
-        //
+        $user = Auth::user();
+        $cart = $user->cart;
+
+        $cartProduct->update([
+            'quantity' => $request->quantity
+        ]);
+
+        $cartProducts = CartProduct::where('cart_id', $cart->id)->get();
+        $total = 0;
+        foreach ($cartProducts as $cartProduct) {
+            $price = $cartProduct->quantity * $cartProduct->product_price;
+            $total += $price;
+        }
+
+        $cart->update([
+            'total' => $total
+        ]);
+
+        return redirect()->route('cart');
     }
 
     /**

@@ -44,7 +44,7 @@ Mon profil | Hokusai
                     </div>
                     <div class="flex flex-col grow">
                         <div class="flex flex-row items-end">
-                            <h2 class="font-bold text-4xl mr-4">Robin FALCK</h2>
+                            <h2 class="font-bold text-4xl mr-4">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h2>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <button class="text-red-500 text-lg font-semibold" :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

@@ -30,7 +30,10 @@ Panier | Hokusai
         <div class="w-full">
             <div x-show="openTab === 1">
                 @if($cartProducts->isEmpty())
-                <h2>ya R frer</h2>
+                <div class="bg-white p-8 flex flex-col">
+                    <h2 class="text-3xl font-semibold">Votre panier est vide</h2>
+                    <p class="text-lg font-semibold">Continuez les achats sur <a href="{{ route('welcome') }}" class="text-greenc hover:text-greenh duration-150">Hokusai</a>, visitez nos <a href="{{ route('mangas.index') }}" class="text-greenc hover:text-greenh duration-150">tendances</a></p>
+                </div>
                 @else
                 @foreach ($cartProducts as $item)
                 <section class="bg-white p-8 flex {{ $loop->last ? '' : 'border-b-4 border-black' }}">
@@ -65,7 +68,7 @@ Panier | Hokusai
                 @endforeach
 
                 <section class="my-8 flex justify-between">
-                    <h2 class="text-3xl font-semibold"><span class="font-bold">Total</span> ({{ $item->count('quantity') }} article{{ $item->count('quantity') == 1 ? '' : 's' }}) : </h2>
+                    <h2 class="text-3xl font-semibold"><span class="font-bold">Total</span> ({{ $cartProducts->count() }} article{{ $cartProducts->count() == 1 ? '' : 's' }}) : </h2>
                     <span class="text-3xl font-bold text-red-500">{{ $cart->total }}€</span>
                 </section>
                 <div class="flex justify-end">

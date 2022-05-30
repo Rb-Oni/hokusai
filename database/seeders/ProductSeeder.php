@@ -654,7 +654,7 @@ class ProductSeeder extends Seeder
                 'img' => 'bluelock.jpg',
                 'name' => 'Blue Lock',
                 'category_id' => '1',
-                'volume' => '7',
+                'volume' => '1',
                 'author' => 'Muneyuki Kaneshiro',
                 'date' => '2021-06-02',
                 'fv_editor' => 'Pika',

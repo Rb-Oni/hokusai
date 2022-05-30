@@ -20,15 +20,29 @@ class CartProductController extends Controller
     {
         $user = Auth::user();
         $cart = $user->cart;
+        $cartProducts = $cart->cartProducts;
+        $tmpCartProduct = null;
 
-        $cartProduct = CartProduct::create([
-            'cart_id' => $cart->id,
-            'product_id' => $request->product_id,
-            'product_price' => $request->product_price,
-            'quantity' => $request->quantity
-        ]);
+        foreach ($cartProducts as $cartProduct) {
+            if ($cartProduct->product_id == $request->product_id) {
+                $tmpCartProduct = $cartProduct;
+            }
+        }
 
-        $total = $cart->total + ($cartProduct->quantity * $cartProduct->product_price);
+        if ($tmpCartProduct) {
+            $tmpCartProduct->update([
+                'quantity' => $tmpCartProduct->quantity + 1
+            ]);
+        } else {
+            $tmpCartProduct = CartProduct::create([
+                'cart_id' => $cart->id,
+                'product_id' => $request->product_id,
+                'product_price' => $request->product_price,
+                'quantity' => $request->quantity
+            ]);
+        }
+
+        $total = $cart->total + ($tmpCartProduct->quantity * $tmpCartProduct->product_price);
 
         $cart->update([
             'total' => $total

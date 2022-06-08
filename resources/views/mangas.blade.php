@@ -16,8 +16,58 @@ Mangas | Hokusai
 
 <div class="container mx-auto py-16">
 
-    <section>
-        DROPDOWNS
+    <section class="mb-4 flex justify-between">
+        <div class="flex">
+            <div @click.away="openSort = false" class="relative" x-data="{ openSort: false,sortType:'Genres' }">
+                <button @click="openSort = !openSort" class="flex text-white bg-black items-center justify-start p-2 text-md font-semibold text-left">
+                    <span x-text="sortType"></span>
+                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': openSort, 'rotate-0': !openSort}" class="w-4 h-4 transition-transform duration-200 transform">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <div x-show="openSort" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-50 origin-top-right">
+                    <div class="bg-black text-white">
+                        <div class="flex flex-col">
+                            @foreach($genres as $category)
+                            <div>
+                                <a @click="sortType='{{ $category->name }}',openSort=!openSort" x-show="sortType != '{{ $category->name }}'" class="flex flex-row items-start p-2 hover:bg-greenc" href="#">
+                                    <div class="">
+                                        <p class="font-semibold">{{ $category->name }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex">
+            <div @click.away="openSort = false" class="relative" x-data="{ openSort: false,sortType:'Type' }">
+                <button @click="openSort = !openSort" class="flex text-white bg-black items-center justify-start p-2 text-md font-semibold text-left">
+                    <span x-text="sortType"></span>
+                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': openSort, 'rotate-0': !openSort}" class="w-4 h-4 transition-transform duration-200 transform">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <div x-show="openSort" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute z-50 origin-top-right">
+                    <div class="bg-black text-white">
+                        <div class="flex flex-col">
+                            @foreach($categories as $genre)
+                            <div>
+                                <a @click="sortType='{{ $genre->name }}',openSort=!openSort" x-show="sortType != '{{ $genre->name }}'" class="flex flex-row items-start p-2 hover:bg-greenc" href="#">
+                                    <div class="">
+                                        <p class="font-semibold">{{ $genre->name }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     @if($products->isEmpty())

@@ -12,8 +12,13 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::query();
+        $genres = Genre::all();
+        $categories = Category::all();
+
         return view('mangas', [
             'products' => $products->orderBy('id', 'ASC')->paginate(16),
+            'categories' => $categories,
+            'genres' => $genres
         ]);
     }
 

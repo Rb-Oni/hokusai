@@ -1,36 +1,35 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.app')
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-        </div>
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+@section('title')
+Connexion | Hokusai
+@endsection
 
-        <!-- Validation Errors -->
-        <x-validation-errors class="mb-4" :errors="$errors" />
+@section('content')
 
+<div class="container mx-auto py-16 text-center">
+
+    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <x-validation-errors class="mb-4" :errors="$errors" />
+
+    <section>
+        <h1 class="text-black text-5xl font-bold">MOT DE PASSE OUBLIÉ ?</h1>
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            <div class="my-8 text-md w-1/2 mx-auto">
+                {{ __('Aucun problème. Indiquez-nous simplement votre adresse e-mail et nous vous enverrons par e-mail un lien de réinitialisation de mot de passe qui vous permettra d\'en choisir un nouveau.') }}
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
+            <div class="flex flex-col w-1/2 mb-8 mx-auto">
+                <input type="email" name="email" class="border border-gray-300 focus:ring-0 focus:border-greenc mb-4" placeholder="Saisissez votre adresse e-mail" :value="old('email')" required autofocus>
+            </div>
+            <div class="text-center mt-8 mb-4">
+                <button type="submit" class="text-2xl text-white font-bold bg-greenc hover:bg-greenh duration-150 px-6 py-3">RÉINISIALISER LE MOT DE PASSE</button>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </section>
+
+</div>
+
+@endsection

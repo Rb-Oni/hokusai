@@ -24,6 +24,9 @@
                     <x-nav-link :href="route('admin.genres.index')" :active="request()->routeIs('admin.genres.index')">
                         {{ __('Genres') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.carts.index')" :active="request()->routeIs('admin.carts.index')">
+                        {{ __('Paniers') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -86,6 +89,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.genres.index')" :active="request()->routeIs('admin.genres.index')">
                 {{ __('Genres') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.carts.index')" :active="request()->routeIs('admin.carts.index')">
+                {{ __('Paniers') }}
             </x-responsive-nav-link>
         </div>
 

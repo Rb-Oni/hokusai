@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\CartProductController;
+use App\Http\Controllers\admin\CartController  as AdminCartController;
 use App\Http\Controllers\admin\GenreController as AdminGenreController;
 use App\Http\Controllers\admin\ProductController as AdminProductController;
 use App\Http\Controllers\admin\CategoryController as AdminCategoryController;
@@ -62,6 +63,8 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
         'create' => 'admin.genres.create',
         'edit' => 'admin.genres.edit'
     ]]);
+
+    Route::get('/carts', [AdminCartController::class, 'index'])->name('admin.carts.index');
 });
 
 require __DIR__ . '/auth.php';

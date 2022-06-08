@@ -149,21 +149,21 @@
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <a href="!#" class="group">
+            <a href="{{ route('mangas.show', str_replace(' ', '+', 'Dr. Stone')) }}" class="group">
                 <div class="bg-drstonesuggest bg-cover bg-center h-80 flex items-end">
                     <div class="flex text-xl text-white font-bold bg-black group-hover:text-black group-hover:bg-white duration-150 mx-auto w-full h-10">
                         <p class="my-auto mx-auto">Dr. Stone</p>
                     </div>
                 </div>
             </a>
-            <a href="!#" class="group">
+            <a href="{{ route('mangas.show', str_replace(' ', '+', 'One Punch-Man')) }}" class="group">
                 <div class="bg-opmsuggest bg-cover bg-center h-80 flex items-end">
                     <div class="flex text-xl text-white font-bold bg-black group-hover:text-black group-hover:bg-white duration-150 mx-auto w-full h-10">
                         <p class="my-auto mx-auto">One Punch Man</p>
                     </div>
                 </div>
             </a>
-            <a href="!#" class="group">
+            <a href="{{ route('mangas.show', str_replace(' ', '+', 'The Promised Neverland')) }}" class="group">
                 <div class="bg-tpnsuggest bg-cover bg-center h-80 flex items-end">
                     <div class="flex text-xl text-white font-bold bg-black group-hover:text-black group-hover:bg-white duration-150 mx-auto w-full h-10">
                         <p class="my-auto mx-auto">The Promised Neverland</p>

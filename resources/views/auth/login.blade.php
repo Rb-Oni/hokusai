@@ -45,6 +45,18 @@ Connexion | Hokusai
         </div>
     </section>
 
+    <div x-data="{ open: false }" x-init="() => setTimeout(() => open = true, 500)" class="">
+
+        <div x-show="open" x-transition:enter-start="opacity-0 scale-90" x-transition:enter="transition duration-200 transform ease" x-transition:leave="transition duration-200 transform ease" x-transition:leave-end="opacity-0 scale-90" class="max-w-screen-lg mx-auto fixed bg-white inset-x-5 p-5 bottom-40 rounded-lg drop-shadow-2xl flex gap-4 flex-wrap md:flex-nowrap text-center md:text-left items-center justify-center md:justify-between">
+            <p class="w-full font-semibold"><span class="font-bold text-greenc">E-mail :</span> admin@admin.com</p>
+            <p class="w-full font-semibold"><span class="font-bold text-greenc">Mot de passe :</span> password</p>
+            <div class="flex gap-4 items-center flex-shrink-0">
+                <button @click="open = false, setTimeout(() => open = true, 3000)" class="text-red-500 focus:outline-none hover:underline">Fermer</button>
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
 @endsection

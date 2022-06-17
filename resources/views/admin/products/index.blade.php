@@ -1,8 +1,17 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-şemibold text-xl text-gray-800 leading-tight">
-            <span class="text-greenc font-bold">{{ $products->total() }}</span> Produits
-        </h2>
+        <div class="flex justify-between items-center">
+            <div>
+                <h2 class="font-şemibold text-xl text-gray-800 leading-tight">
+                    <span class="text-greenc font-bold">{{ $products->total() }}</span> Produits
+                </h2>
+            </div>
+            <div>
+                <a href="{{ route('admin.products.create') }}" class="inline-block px-4 py-2.5 bg-green-500 text-white font-bold text-md leading-tight rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg><span class="align-middle">Ajouter</span></a>
+            </div>
+        </div>
     </x-slot>
 
     <div class="py-12">
@@ -13,14 +22,7 @@
         </div>
 
         <div class="w-full lg:w-5/6 max-w-7xl mx-auto sm:px-6 lg:px-8 flex flex-row justify-between">
-            <a href="{{ route('admin.products.create') }}" class="inline-block px-4 py-2.5 bg-green-500 text-white font-bold text-md leading-tight rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                </svg><span class="align-middle">Ajouter</span></a>
-
             <form action="" method="GET" class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-greenc mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
                 <input type="search" name="search" id="search" class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Rechercher un produit" aria-label="Search" aria-describedby="button-addon2">
             </form>
 

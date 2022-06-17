@@ -1,8 +1,17 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-şemibold text-xl text-gray-800 leading-tight">
-            <span class="text-greenc font-bold">{{ $genres->total() }}</span> Genres
-        </h2>
+        <div class="flex justify-between items-center">
+            <div>
+                <h2 class="font-şemibold text-xl text-gray-800 leading-tight">
+                    <span class="text-greenc font-bold">{{ $genres->total() }}</span> Genres
+                </h2>
+            </div>
+            <div>
+                <a href="{{ route('admin.genres.create') }}" class="inline-block px-4 py-2.5 bg-green-500 text-white font-bold text-md leading-tight rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg><span class="align-middle">Ajouter</span></a>
+            </div>
+        </div>
     </x-slot>
 
     <div class="py-12">
@@ -10,12 +19,6 @@
         <div class="w-full lg:w-5/6 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-validation-errors />
             <x-success-message />
-        </div>
-
-        <div class="w-full lg:w-5/6 max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <a href="{{ route('admin.genres.create') }}" class="inline-block px-4 py-2.5 bg-green-500 text-white font-bold text-md leading-tight rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                </svg><span class="align-middle">Ajouter</span></a>
         </div>
 
         @if($genres->isEmpty())

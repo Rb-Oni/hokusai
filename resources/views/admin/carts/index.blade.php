@@ -14,9 +14,6 @@
 
         <div class="w-full lg:w-5/6 max-w-7xl mx-auto sm:px-6 lg:px-8 flex flex-row justify-between">
             <form action="" method="GET" class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-greenc mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
                 <input type="search" name="search" id="search" class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Rechercher un produit" aria-label="Search" aria-describedby="button-addon2">
             </form>
 

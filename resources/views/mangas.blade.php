@@ -8,13 +8,13 @@ Mangas | Hokusai
 @section('content')
 
 <div class="container mx-auto h-45vh flex justify-end items-end">
-    <div class="px-12 py-5 bg-white bg-opacity-95">
-        <h1 class="text-6xl text-center font-bold">Tendances</h1>
+    <div class="px-5 lg:px-12 py-5 bg-white bg-opacity-95">
+        <h1 class="text-4xl lg:text-6xl text-center font-bold">Tendances</h1>
     </div>
 </div>
 </div>
 
-<div class="container mx-auto py-16">
+<div class="container px-5 lg:px-0 mx-auto py-16">
 
     <section class="mb-4 flex justify-between">
         <div class="flex">

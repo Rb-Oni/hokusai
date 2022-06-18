@@ -7,7 +7,7 @@ Creer un compte | Hokusai
 
 @section('content')
 
-<div class="container mx-auto py-16 text-center">
+<div class="container px-5 lg:px-0 mx-auto py-16 text-center">
 
     <x-validation-errors class="mb-4 w-1/2" :errors="$errors" />
 
@@ -15,7 +15,7 @@ Creer un compte | Hokusai
         <h1 class="text-black text-5xl font-bold">CREER UN COMPTE</h1>
         <form method="POST" action="{{ route('register') }}">
             @csrf
-            <div class="grid grid-cols-1 w-1/2 my-8 mx-auto">
+            <div class="grid grid-cols-1 lg:w-1/2 my-8 mx-auto">
                 <div class="grid grid-cols-2 gap-4 mb-4">
                     <input type="text" name="lastname" id="lastname" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Nom" :value="old('lastname')" required autofocus>
                     <input type="text" name="firstname" id="firstname" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Prénom" :value="old('firstname')" required>

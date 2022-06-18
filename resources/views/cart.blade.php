@@ -7,7 +7,7 @@ Panier | Hokusai
 
 @section('content')
 
-<div class="container mx-auto py-16">
+<div class="container px-5 lg:px-0 mx-auto py-16">
 
     <h1 class="text-black text-5xl font-bold">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 inline" viewBox="0 0 20 20" fill="currentColor">
@@ -16,7 +16,7 @@ Panier | Hokusai
         <span class="align-middle">VOTRE PANIER</span>
     </h1>
     <section x-data="{ openTab: 1 }" class="container mx-auto">
-        <ul class="grid grid-cols-3 gap-4 items-center my-4">
+        <ul class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center my-4">
             <li @click="openTab = 1" :class="{ 'text-white bg-greenc':openTab === 1 }" class="bg-white p-4">
                 <button :class"openTab===1 ? activeClasses : inactiveClasses" class="text-2xl font-bold">1. Récapitulatif</button>
             </li>
@@ -36,7 +36,7 @@ Panier | Hokusai
                 </div>
                 @else
                 @foreach ($cartProducts as $item)
-                <section class="bg-white p-8 flex {{ $loop->last ? '' : 'border-b-4 border-black' }}">
+                <section class="bg-white p-5 lg:p-8 flex flex-col lg:flex-row {{ $loop->last ? '' : 'border-b-4 border-black' }}">
                     <img src="{{ asset('storage/products/' . $item->product->img) }}" class="h-96 mr-4" alt="{{ $item->product->name }}">
                     <div class="grow font-semibold text-2xl">
                         <div class="flex justify-between text-3xl">

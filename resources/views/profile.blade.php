@@ -7,10 +7,10 @@ Mon profil | Hokusai
 
 @section('content')
 
-<div class="container mx-auto py-16">
+<div class="container px-5 lg:px-0 mx-auto py-16">
 
     <section x-data="{ openTab: 1 }" class="container mx-auto">
-        <ul class="grid grid-cols-3 gap-4 items-center">
+        <ul class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center">
             <li @click="openTab = 1" :class="{ 'text-white bg-greenc':openTab === 1 }" class="bg-white text-center py-4">
                 <button :class"openTab===1 ? activeClasses : inactiveClasses" class="text-2xl font-bold">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline" viewBox="0 0 20 20" fill="currentColor">
@@ -39,12 +39,12 @@ Mon profil | Hokusai
         <div class="w-full">
             <div x-show="openTab === 1">
                 <section class="flex py-8">
-                    <div class="mr-8">
+                    <div class="mr-8 hidden lg:block">
                         <img src="{{ asset('storage/products/berserk.jpg') }}" class="h-60 w-60 rounded-full" alt="">
                     </div>
                     <div class="flex flex-col grow">
-                        <div class="flex flex-row items-end">
-                            <h2 class="font-bold text-4xl mr-4">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h2>
+                        <div class="flex flex-col lg:flex-row items-end">
+                            <h2 class="font-bold text-4xl lg:mr-4">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h2>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <button class="text-red-500 text-lg font-semibold" :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -53,7 +53,7 @@ Mon profil | Hokusai
                             </form>
                         </div>
                         <span>Membre depuis : 24 octobre 2013</span>
-                        <textarea class="border-0 focus:ring-0 h-full mt-12" name="description" id="description" placeholder="Description..." cols="" rows=""></textarea>
+                        <textarea class="border-0 focus:ring-0 h-full mt-5 lg:mt-12" name="description" id="description" placeholder="Description..." cols="" rows=""></textarea>
                     </div>
                 </section>
 
@@ -84,11 +84,11 @@ Mon profil | Hokusai
                 <x-validation-errors />
                 <x-success-message />
                 <section class="py-8">
-                    <h1 class="text-black text-center text-5xl font-bold">MODIFIER SES COORDONNÉES</h1>
+                    <h1 class="text-black text-center text-4xl lg:text-5xl font-bold">MODIFIER SES COORDONNÉES</h1>
                     <form method="POST" action="{{ route('profile.update') }}">
                         @method('PUT')
                         @csrf
-                        <div class="grid grid-cols-1 w-1/2 my-8 mx-auto">
+                        <div class="grid grid-cols-1 lg:w-1/2 my-8 mx-auto">
                             <fieldset class="flex flex-row gap-4 mb-4">
                                 <div>
                                     <input type="radio" id="male" name="gender" value="male" class="border border-gray-300 focus:ring-greenc text-greenc">
@@ -105,7 +105,7 @@ Mon profil | Hokusai
                                     <label for="other" class="align-middle">Autre</label>
                                 </div>
                             </fieldset>
-                            <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
                                 <input type="text" name="lastname" id="lastname" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Nom" value="{{ $user->lastname }}" required autofocus>
                                 <input type="text" name="firstname" id="firstname" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Prénom" value="{{ $user->firstname }}" required>
                             </div>
@@ -119,11 +119,11 @@ Mon profil | Hokusai
                                 <option value="Suisse">Suisse</option>
                             </select>
                             <input type="text" name="adrress" id="adrress" class="border border-gray-300 focus:ring-0 focus:border-greenc mb-4" placeholder="Adresse" value="{{ $user->address }}">
-                            <div class="flex flex-row gap-4 mb-4">
+                            <div class="flex flex-col lg:flex-row gap-4 mb-4">
                                 <input type="text" name="postcode" id="postcode" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Code postal" value="{{ $user->postcode }}">
                                 <input type="text" name="city" id="city" class="grow border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Ville" value="{{ $user->city }}">
                             </div>
-                            <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
                                 <input type="date" name="birthdate" id="birthdate" class="border border-gray-300 focus:ring-0 focus:border-greenc" value="{{ $user->birthdate }}">
                                 <input type="text" name="phone" id="phone" class="grow border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Numéro de téléphone" value="{{ $user->phone }}">
                             </div>

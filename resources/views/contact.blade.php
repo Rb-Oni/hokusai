@@ -7,12 +7,12 @@ Contact | Hokusai
 
 @section('content')
 
-<div class="container mx-auto py-16">
+<div class="container px-5 lg:px-0 mx-auto py-16">
 
-    <h1 class="font-bold text-5xl border-b-4 border-black pb-3 mb-6">CONTACTEZ NOUS</h1>
+    <h1 class="font-bold text-3xl lg:text-5xl border-b-4 border-black pb-3 mb-6">CONTACTEZ NOUS</h1>
     <section class="grid xl:grid-cols-2">
         <div>
-            <h2 class="font-bold text-3xl">Hokusai</h2>
+            <h2 class="font-bold text-2xl lg:text-3xl">Hokusai</h2>
             <ul class="font-semibold text-xl mt-2">
                 <li><a href="https://www.google.com/maps?ll=49.204442,6.954777&z=15&t=m&hl=fr&gl=FR&mapclient=embed&cid=16237456434978358748" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline text-greenc" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
@@ -34,7 +34,7 @@ Contact | Hokusai
         </div>
     </section>
 
-    <h1 class="font-bold text-5xl border-b-4 border-black pb-3 mb-6 mt-12">ENVOYEZ UN MESSAGE</h1>
+    <h1 class="font-bold text-3xl lg:text-5xl border-b-4 border-black pb-3 mb-6 mt-12">ENVOYEZ UN MESSAGE</h1>
     <section>
         <div class="grid xl:grid-cols-2 gap-4">
             <div class="grid grid-flow-row">

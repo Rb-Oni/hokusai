@@ -14,7 +14,7 @@
         </div>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 px-5 lg:px-0">
 
         <div class="w-full lg:w-5/6 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-validation-errors />
@@ -33,14 +33,14 @@
         @else
         <div class="w-full lg:w-5/6 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-md rounded my-6">
-                <table class="min-w-max w-full table-auto">
+                <table class="w-full table-auto">
                     <thead class="">
                         <tr class="bg-greenc text-white uppercase text-md leading-normal">
                             <th class="py-3 px-6 text-center">Nom</th>
-                            <th class="py-3 px-6 text-center">Catégorie</th>
-                            <th class="py-3 px-6 text-center">Genres</th>
-                            <th class="py-3 px-6 text-center">Auteur</th>
-                            <th class="py-3 px-6 text-center">Date de sortie</th>
+                            <th class="py-3 px-6 text-center hidden lg:table-cell">Catégorie</th>
+                            <th class="py-3 px-6 text-center hidden lg:table-cell">Genres</th>
+                            <th class="py-3 px-6 text-center hidden lg:table-cell">Auteur</th>
+                            <th class="py-3 px-6 text-center hidden lg:table-cell">Date de sortie</th>
                             <th class="py-3 px-6 text-center">Action</th>
                         </tr>
                     </thead>
@@ -48,32 +48,32 @@
 
                         @foreach($products as $product)
                         <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
-                            <td class="py-3 px-6">
+                            <td class="py-3 lg:px-6">
                                 <div class="flex items-center justify-center">
                                     <div class="text-center">
                                         <span class="font-bold text-2xl">{{ $product->name }}</span>
-                                        <img class="object-scale-down h-60 w-60" src="{{ asset('storage/products/'.$product->img) }}">
+                                        <img class="object-scale-down h-20 w-20 lg:h-60 lg:w-60" src="{{ asset('storage/products/'.$product->img) }}">
                                     </div>
                                 </div>
                             </td>
-                            <td class="py-3 px-6 text-center">
+                            <td class="py-3 px-6 text-center hidden lg:table-cell">
                                 <div class="flex items-center justify-center">
                                     <span>{{ $product->category->name }}</span>
                                 </div>
                             </td>
-                            <td class="py-3 px-6 text-center">
+                            <td class="py-3 px-6 text-center hidden lg:table-cell">
                                 @foreach($product->genres as $genre)
                                 <div class="flex items-center justify-center">
                                     <span>{{ $genre->name }}</span>
                                 </div>
                                 @endforeach
                             </td>
-                            <td class="py-3 px-6 text-center">
+                            <td class="py-3 px-6 text-center hidden lg:table-cell">
                                 <div class="flex items-center justify-center">
                                     <span>{{ $product->author }}</span>
                                 </div>
                             </td>
-                            <td class="py-3 px-6 text-center">
+                            <td class="py-3 px-6 text-center hidden lg:table-cell">
                                 <div class="flex items-center justify-center">
                                     <span>{{ date('d M Y', strtotime($product->date)) }}</span>
                                 </div>
@@ -96,7 +96,7 @@
 
                                         <div x-show="showModal" class="fixed w-full flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
                                             <!-- Modal -->
-                                            <div x-show="showModal" class="bg-white rounded-md shadow-2xl p-6 w-3/12 mx-10" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
+                                            <div x-show="showModal" class="bg-white rounded-md shadow-2xl p-6 lg:w-3/12 mx-10" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
                                                 <!-- Title -->
                                                 <span class="block text-black text-2xl mb-3">Souhaitez vous supprimer le produit ?</span>
                                                 <span class="text-2xl font-bold text-greenc">{{ $product->name }}</span>

@@ -7,7 +7,7 @@ Connexion | Hokusai
 
 @section('content')
 
-<div class="container mx-auto py-16 text-center">
+<div class="container px-5 lg:px-0 mx-auto py-16 text-center">
 
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <x-validation-errors class="mb-4" :errors="$errors" />
@@ -16,7 +16,7 @@ Connexion | Hokusai
         <h1 class="text-black text-5xl font-bold">CONNECTEZ-VOUS</h1>
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <div class="flex flex-col w-1/2 my-8 mx-auto">
+            <div class="flex flex-col lg:w-1/2 my-8 mx-auto">
                 <input type="email" name="email" id="email" class="border border-gray-300 focus:ring-0 focus:border-greenc mb-4" placeholder="Saisissez votre adresse e-mail" :value="old('email')" required autofocus>
                 <input type="password" name="password" id="password" class="border border-gray-300 focus:ring-0 focus:border-greenc" placeholder="Saisissez votre mot de passe" required autocomplete="current-password">
                 <!-- Remember Me -->
@@ -41,7 +41,7 @@ Connexion | Hokusai
     <section class="mt-16">
         <h1 class="text-black text-5xl font-bold">PAS ENCORE DE COMPTE ?</h1>
         <div class="text-center mt-12">
-            <a href="{{ route('register') }}" class="text-2xl text-white font-bold bg-greenc hover:bg-greenh duration-150 px-6 py-3">CREER UN COMPTE</a>
+            <a href="{{ route('register') }}" class="text-2xl text-white font-bold bg-greenc hover:bg-greenh duration-150 px-3 lg:px-6 py-3">CREER UN COMPTE</a>
         </div>
     </section>
 

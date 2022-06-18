@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 px-5">
 
         <div class="w-full lg:w-5/6 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-validation-errors />
@@ -21,11 +21,11 @@
 
         <div class="w-full lg:w-5/6 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-md rounded my-6">
-                <table class="min-w-max w-full table-auto">
+                <table class="w-full table-auto">
                     <thead class="">
                         <tr class="bg-greenc text-white uppercase text-md leading-normal">
                             <th class="py-3 px-6 text-center">Name</th>
-                            <th class="py-3 px-6 text-center">Cart ID</th>
+                            <th class="py-3 px-6 text-center hidden lg:table-cell">Cart ID</th>
                             <th class="py-3 px-6 text-center">Products</th>
                         </tr>
                     </thead>
@@ -38,13 +38,13 @@
                                     <span>{{ $cart->user->lastname }}</span>
                                 </div>
                             </td>
-                            <td class="py-3 px-6 text-center">
+                            <td class="py-3 px-6 text-center hidden lg:table-cell">
                                 <div class="flex items-center justify-center">
                                     <span>{{ $cart->id }}</span>
                                 </div>
                             </td>
                             <td class="py-3 px-6 text-center">
-                                <div class="flex items-center justify-center">
+                                <div class="flex flex-col lg:flex-row items-center justify-center">
                                     @foreach($cart->cartProducts as $cartProduct)
                                     <span>{{ $cartProduct->product->name }}</span>
                                     @if ($loop->last)

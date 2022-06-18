@@ -17,7 +17,7 @@ Hokusai
 </div>
 </div>
 
-<div class="container mx-auto py-16">
+<div class="container px-5 lg:px-0 mx-auto py-16">
 
     <section>
         <div class="mb-8 flex flex-row justify-between items-end">
@@ -105,7 +105,7 @@ Hokusai
 </div>
 
 <div class="bg-genres bg-cover bg-center">
-    <div class="container mx-auto py-16">
+    <div class="container px-5 lg:px-0 mx-auto py-16">
         <div class="mb-16">
             <h2 class="text-5xl text-center font-bold">Genres</h2>
         </div>

@@ -4,7 +4,7 @@
     </svg>
 </a>
 <footer class="bg-black">
-    <div class="container mx-auto text-white py-3">
+    <div class="container px-5 lg:px-0 mx-auto text-white py-3">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between py-3">
             <div class="mb-2 lg:mb-6">
                 <p class="font-bold mb-4">SERVICE CLIENT</p>

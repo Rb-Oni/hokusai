@@ -48,7 +48,13 @@
                     <img src="img/colissimo.png" alt="Colissimo" class="h-7">
                 </div>
             </div>
+        </div>
+    </div>
 
+    <div class="border-t-2 border-white h-1"></div>
+
+    <div class="container px-5 lg:px-0 mx-auto text-white py-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between py-3">
             <div class="mb-2 lg:mb-0">
                 <p class="font-bold mb-4">NOS AVANTAGES</p>
                 <ul class="">
@@ -74,5 +80,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </footer>

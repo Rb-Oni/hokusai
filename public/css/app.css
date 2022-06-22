@@ -815,6 +815,12 @@ select {
 .-mt-px {
   margin-top: -1px;
 }
+.mb-auto {
+  margin-bottom: auto;
+}
+.mt-auto {
+  margin-top: auto;
+}
 .block {
   display: block;
 }
